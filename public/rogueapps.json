@@ -1,0 +1,108 @@
+[
+    {
+      "name": "eM Client",
+      "description": "A robust email client often targeted by attackers due to its extensive capabilities.",
+      "contributor": "Huntress Research Team",
+      "mitreTTP": "T1234",
+      "category": "Email Client Application",
+      "riskLevel": "High",
+      "dateAdded": "2024-08-05",
+      "tags": ["BEC", "email"],
+      "references": [
+        "https://www.emclient.com/",
+        "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise"
+      ],
+      "permissions": ["read", "write", "access contacts"]
+    },
+    {
+      "name": "Lorem Ipsum App 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet.",
+      "contributor": "Jane Doe",
+      "mitreTTP": "T5678",
+      "category": "Social Media",
+      "riskLevel": "Medium",
+      "dateAdded": "2024-08-01",
+      "tags": ["social", "media"],
+      "references": [
+        "https://example.com/app1",
+        "https://example.com/app1-details"
+      ],
+      "permissions": ["read", "write"]
+    },
+    {
+      "name": "Lorem Ipsum App 2",
+      "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.",
+      "contributor": "John Smith",
+      "mitreTTP": "T91011",
+      "category": "Productivity",
+      "riskLevel": "Low",
+      "dateAdded": "2024-07-15",
+      "tags": ["productivity", "tools"],
+      "references": [
+        "https://example.com/app2",
+        "https://example.com/app2-details"
+      ],
+      "permissions": ["read"]
+    },
+    {
+      "name": "Lorem Ipsum App 3",
+      "description": "Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "contributor": "Alice Johnson",
+      "mitreTTP": "T1213",
+      "category": "Utility",
+      "riskLevel": "High",
+      "dateAdded": "2024-06-20",
+      "tags": ["utility", "security"],
+      "references": [
+        "https://example.com/app3",
+        "https://example.com/app3-details"
+      ],
+      "permissions": ["read", "write", "access contacts"]
+    },
+    {
+      "name": "Lorem Ipsum App 4",
+      "description": "Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim.",
+      "contributor": "Bob Brown",
+      "mitreTTP": "T1415",
+      "category": "Finance",
+      "riskLevel": "Medium",
+      "dateAdded": "2024-05-30",
+      "tags": ["finance", "management"],
+      "references": [
+        "https://example.com/app4",
+        "https://example.com/app4-details"
+      ],
+      "permissions": ["read", "write", "access contacts"]
+    },
+    {
+      "name": "Lorem Ipsum App 5",
+      "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta.",
+      "contributor": "Charlie White",
+      "mitreTTP": "T1617",
+      "category": "Health",
+      "riskLevel": "Low",
+      "dateAdded": "2024-05-10",
+      "tags": ["health", "monitoring"],
+      "references": [
+        "https://example.com/app5",
+        "https://example.com/app5-details"
+      ],
+      "permissions": ["read", "access contacts"]
+    },
+    {
+      "name": "Lorem Ipsum App 6",
+      "description": "Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+      "contributor": "Diane Green",
+      "mitreTTP": "T1819",
+      "category": "Education",
+      "riskLevel": "Medium",
+      "dateAdded": "2024-04-25",
+      "tags": ["education", "learning"],
+      "references": [
+        "https://example.com/app6",
+        "https://example.com/app6-details"
+      ],
+      "permissions": ["read", "write", "access contacts"]
+    }
+  ]
+  
