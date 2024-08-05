@@ -1,102 +1,122 @@
 .container {
-    padding: 0 2rem;
-  }
-  
-  .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-    text-align: center;
-    color: var(--primary-teal);
-    font-family: 'Visuelt', sans-serif;
-  }
-  
-  .search {
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 400px;
-    border: var(--form-field-border) solid var(--border-gray);
-    border-radius: 5px;
-    background-color: var(--primary-grey);
-    color: var(--primary-black);
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
-  }
-  
-  .card {
-    padding: 1.5rem;
-    text-align: left;
-    color: inherit;
-    text-decoration: none;
-    border: 1px solid var(--border-gray);
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-black);
-    color: var(--white-2);
-    word-wrap: break-word; /* Ensure long words break to avoid overflow */
-    font-family: 'HK Nova', sans-serif;
-  }
-  
-  .card:hover,
-  .card:focus,
-  .card:active {
-    color: var(--primary-green);
-    border-color: var(--primary-green);
-  }
-  
-  .card h3 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-    color: var(--white-2);
-    font-family: 'Visuelt', sans-serif;
-  }
-  
-  .card p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--white-2);
-    font-family: 'HK Nova', sans-serif;
-  }
-  
-  .card ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .card ul li {
-    margin: 0.5rem 0;
-    font-family: 'HK Nova', sans-serif;
-  }
-  
-  .card a {
-    color: var(--primary-green);
-    text-decoration: none;
-    font-family: 'HK Nova', sans-serif;
-  }
-  
-  .card a:hover,
-  .card a:focus,
-  .card a:active {
-    text-decoration: underline;
-  }
-  
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+  color: var(--primary-teal);
+  font-family: 'Visuelt', sans-serif;
+}
+
+.search {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 400px;
+  border: var(--form-field-border) solid var(--border-gray);
+  border-radius: 5px;
+  background-color: var(--primary-grey);
+  color: var(--primary-black);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-black);
+  color: var(--white-2);
+  word-wrap: break-word; /* Ensure long words break to avoid overflow */
+  font-family: 'HK Nova', sans-serif;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: var(--white-2);
+  font-family: 'Visuelt', sans-serif;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--white-2);
+  font-family: 'HK Nova', sans-serif;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card ul li {
+  margin: 0.5rem 0;
+  font-family: 'HK Nova', sans-serif;
+}
+
+.card a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-family: 'HK Nova', sans-serif;
+}
+
+.card a:hover,
+.card a:focus,
+.card a:active {
+  text-decoration: underline;
+}
+
+.expandedCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+  background-color: var(--primary-black);
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  padding: 2rem;
+}
