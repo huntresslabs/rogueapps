@@ -9,6 +9,7 @@
   align-items: center;
   min-height: 100vh;
   padding-top: 4rem; /* Add padding to avoid overlap with the navbar */
+  padding-bottom: 6rem; /* Add padding to avoid overlap with the footer */
 }
 
 .title {
@@ -88,7 +89,7 @@
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
-  color: var(--white-2);
+  color: var (--white-2);
   font-family: 'Visuelt', sans-serif;
 }
 

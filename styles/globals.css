@@ -24,7 +24,7 @@ body {
   font-family: 'HK Nova', sans-serif;
   background-color: var(--dark-gray);
   color: var(--white-2);
-  padding-bottom: 4rem; /* To account for the fixed footer height */
+  padding-bottom: 4rem; /* Add padding to avoid overlap with the footer */
 }
 
 h1, h2, h3, h4, h5, h6 {

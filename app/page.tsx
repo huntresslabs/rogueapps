@@ -36,18 +36,21 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>RogueApps</h1>
-        <h2> When Good Apps Go Rogue</h2>
-        <p className={styles.poweredBy}>
-          Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>.
-        </p>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className={styles.search}
-        />
+        {expandedCard === null && (
+          <>
+            <h1 className={styles.title}>RogueApps</h1>
+            <h3 className={styles.poweredBy}>
+              When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>.
+            </h3>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className={styles.search}
+            />
+          </>
+        )}
 
         <div className={`${styles.grid} ${expandedCard !== null ? styles.hidden : ''}`}>
           {filteredApps.map((app, index) => (
