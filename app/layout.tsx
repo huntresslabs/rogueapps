@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Link from 'next/link';
 import styles from '../styles/Layout.module.css';
 import Head from 'next/head';
+import Footer from './Footer';
 
 export const metadata = {
   title: 'RogueApps',
@@ -26,7 +27,9 @@ export default function RootLayout({
           <Link href="/contribute" className={styles.navLink}>Contribute</Link>
           <Link href="/about" className={styles.navLink}>About</Link>
         </nav>
+        <div style={{ paddingTop: '5rem' }}>{/* To account for the fixed navbar height */}</div>
         {children}
+        <Footer />
       </body>
     </html>
   );

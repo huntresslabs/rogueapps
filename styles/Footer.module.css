@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-black);
+    color: var(--white-2);
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
