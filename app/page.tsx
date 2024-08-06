@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchRogueApps() {
-      const res = await fetch('/rogueapps.json');
+      const res = await fetch('https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json');
       const data: RogueApp[] = await res.json();
       setRogueApps(data);
     }
