@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta property="og:description" content=""/>
                 <meta property="og:image" content="https://cdn.prod.website-files.com/655ddcc107aef728354e9c2a/655ddcc107aef728354e9cbf_Huntress-logo.svg" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="RogutApps"/>
+                <meta name="twitter:title" content="RogueApps"/>
                 <meta name="twitter:site" content="@HuntressLabs" />
                 <meta name="twitter:creator" content="@HuntressLabs" />
                 <meta name="twitter:description" content=""/>
