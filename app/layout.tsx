@@ -11,10 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=HK+Nova:wght@500;700;800&family=Visuelt:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=HK+Nova:wght@500;700;800&family=Visuelt:wght@400;700&display=swap" />
+        <title>RogueApps</title>
       </Head>
       <body>
         <Navbar />
