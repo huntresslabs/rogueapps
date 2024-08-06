@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; /* Change to flex-start to left-align items */
+    align-items: flex-start;
     min-height: 100vh;
     padding-top: 4rem; /* Add padding to avoid overlap with the navbar */
   }
@@ -15,25 +15,50 @@
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-    text-align: left; /* Change to left-align */
+    text-align: center;
     color: var(--primary-teal);
     font-family: 'Visuelt', sans-serif;
     margin-bottom: 2rem; /* Add some space below the title */
   }
   
-  .subtitle {
-    font-size: 1.5rem;
-    text-align: left; /* Change to left-align */
-    color: var(--primary-black);
+  .thankYou {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--primary-teal);
     font-family: 'Roboto', sans-serif;
     margin-bottom: 1rem;
   }
   
-  .paragraph {
-    font-size: 1rem;
-    text-align: left; /* Change to left-align */
-    color: var(--primary-black);
+  .contributorGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .contributorItem {
+    background-color: var(--primary-black);
+    border-radius: 10px;
+    border: 2px solid var(--primary-green-light);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--primary-teal);
     font-family: 'HK Nova', sans-serif;
-    margin-bottom: 1rem;
+  }
+  
+  .contributorItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .divider {
+    width: 100%;
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid var(--primary-teal);
   }
   
