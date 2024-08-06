@@ -1,7 +1,7 @@
 ---
 name: New RogueApp
 about: Describe this issue template's purpose here.
-title: "[New RogueApp]: {RogueApp Name}
+title: "[New RogueApp]: RogueApp Name"
 labels: new rogueapp
 assignees: ''
 
