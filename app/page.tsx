@@ -1,21 +1,23 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { RogueApp } from '../lib/types';
 import styles from '../styles/Home.module.css';
 import Callout from './components/Callout';
-import { getRogueApps } from '../lib/getRogueApps';
 
-export async function getStaticProps() {
-  const rogueApps = getRogueApps();
-  return {
-    props: {
-      rogueApps,
-    },
-  };
-}
-
-export default function Home({ rogueApps }: { rogueApps: RogueApp[] }) {
+export default function Home() {
+  const [rogueApps, setRogueApps] = useState<RogueApp[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function fetchRogueApps() {
+      const res = await fetch('/rogueapps.json');
+      const data: RogueApp[] = await res.json();
+      setRogueApps(data);
+    }
+    fetchRogueApps();
+  }, []);
 
   const filteredApps = rogueApps.filter(app =>
     app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
