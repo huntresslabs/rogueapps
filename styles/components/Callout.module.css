@@ -1,0 +1,38 @@
+.callout {
+    background-color: var(--primary-teal);
+    color: var(--primary-black);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calloutTitle {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    font-family: 'Visuelt', sans-serif;
+  }
+  
+  .calloutText {
+    margin: 0 0 2rem;
+    font-size: 1.2rem;
+    font-family: 'HK Nova', sans-serif;
+  }
+  
+  .calloutButton {
+    background-color: var(--primary-blue);
+    color: var(--white-2);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+  }
+  
+  .calloutButton:hover {
+    background-color: var(--primary-blue);
+  }
+  

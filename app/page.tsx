@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { RogueApp } from '../lib/types';
 import styles from '../styles/Home.module.css';
+import Callout from './components/Callout';
 
 export default function Home() {
   const [rogueApps, setRogueApps] = useState<RogueApp[]>([]);
@@ -36,22 +37,18 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        {expandedCard === null && (
-          <>
-            <h1 className={styles.title}>RogueApps</h1>
-            <h3 className={styles.poweredBy}>
-              When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>.
-            </h3>
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className={styles.search}
-            />
-          </>
-        )}
-
+        <h1 className={styles.title}>RogueApps</h1>
+        <p className={styles.poweredBy}>
+          Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>
+        </p>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className={styles.search}
+        />
+        <Callout />
         <div className={`${styles.grid} ${expandedCard !== null ? styles.hidden : ''}`}>
           {filteredApps.map((app, index) => (
             <div

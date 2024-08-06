@@ -1,9 +1,10 @@
 import styles from '../../styles/components/Footer.module.css';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      © 2024 Huntress. All Rights Reserved.
+    <p> © {currentYear} | <a href="https://huntress.com"> Huntress</a> | All Rights Reserved.</p>
     </footer>
   );
 }

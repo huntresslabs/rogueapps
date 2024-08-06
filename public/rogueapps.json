@@ -13,7 +13,7 @@
         "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
         "https://cybercorner.tech/malicious-usage-of-em-client-in-business-email-compromise/"
       ],
-      "permissions": ["Microsoft Graph - EWS.AccessAsUser.All- Delegated,", "Microsoft Graph - offline_access - Delegated", "Microsoft Graph - email - Delegated", "Microsoft Graph - openid - Delegated" ]
+      "permissions": ["Microsoft Graph - EWS.AccessAsUser.All- Delegated", "Microsoft Graph - offline_access - Delegated", "Microsoft Graph - email - Delegated", "Microsoft Graph - openid - Delegated" ]
     }
   ]
   
