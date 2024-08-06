@@ -38,9 +38,9 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>RogueApps</h1>
-        <p className={styles.poweredBy}>
-          Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>
-        </p>
+        <h3 className={styles.poweredBy}>
+          When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>
+        </h3>
         <input
           type="text"
           placeholder="Search..."
