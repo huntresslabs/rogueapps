@@ -8,7 +8,7 @@ export const metadata = {
   description: 'RogueApps: when good OAuth apps go rogue.',
   viewport: 'width=device-width, initial-scale=1',
   icons: {
-    icon: '/favicon.ico',
+    icon: 'https://huntresslabs.github.io/rogueapps/favicon.ico',
   },
   openGraph: {
     card: 'summary_large_image',
