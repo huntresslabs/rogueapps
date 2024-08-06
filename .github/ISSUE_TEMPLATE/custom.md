@@ -1,6 +1,6 @@
 ---
 name: New RogueApp
-about: Describe this issue template's purpose here.
+about: Submit a new RogueApp to the repository.
 title: "[New RogueApp]: RogueApp Name"
 labels: new rogueapp
 assignees: ''
