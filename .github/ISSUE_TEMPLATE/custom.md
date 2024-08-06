@@ -6,7 +6,7 @@ labels: new rogueapp
 assignees: ''
 
 ---
-> ⚠️ Please include as much detail as possible
+> ⚠️ Please include as much detail as possible. Please do not submit any private, sensitive, and/or proprietary information.
 
 * **Contributor Name:** [your name, research group name, or handle]
 * **RogueApp Name:** [the name of the RogueApp]
