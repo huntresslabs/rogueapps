@@ -11,10 +11,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=HK+Nova:wght@500;700;800&family=Visuelt:wght@400;700&display=swap" />
-        <title>RogueApps</title>
-      </Head>
+                <meta name="description" content="RogueApps: when good OAuth apps go rogue." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+                <meta property="og:card" content="summary_large_image" />
+                <meta property="og:title" content="RogueApps"/>
+                <meta property="og:author" content="Huntress" />
+                <meta property="og:description" content=""/>
+                <meta property="og:image" content="https://cdn.prod.website-files.com/655ddcc107aef728354e9c2a/655ddcc107aef728354e9cbf_Huntress-logo.svg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="RogutApps"/>
+                <meta name="twitter:site" content="@HuntressLabs" />
+                <meta name="twitter:creator" content="@HuntressLabs" />
+                <meta name="twitter:description" content=""/>
+                <meta name="twitter:image" content="https://cdn.prod.website-files.com/655ddcc107aef728354e9c2a/655ddcc107aef728354e9cbf_Huntress-logo.svg" />
+            </Head>
       <body>
         <Navbar />
         <div style={{ paddingTop: '5rem' }}>{/* To account for the fixed navbar height */}</div>
