@@ -35,6 +35,10 @@ p, a, li {
   font-family: 'HK Nova', sans-serif;
 }
 
+a, li {
+  color:#00f49c;
+}
+
 html, body {
   padding: 0;
   margin: 0;
