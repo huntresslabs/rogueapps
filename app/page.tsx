@@ -37,6 +37,10 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>RogueApps</h1>
+        <h2> When Good Apps Go Rogue</h2>
+        <p className={styles.poweredBy}>
+          Powered by <a href="https://www.huntress.com" target="_blank" rel="noopener noreferrer">Huntress</a>.
+        </p>
         <input
           type="text"
           placeholder="Search..."
@@ -53,24 +57,28 @@ export default function Home() {
               onClick={() => toggleExpandCard(index)}
             >
               <h3>{app.name}</h3>
-              <p><strong>Description:</strong> {app.description}</p>
-              <p><strong>Contributor:</strong> {app.contributor}</p>
-              <p><strong>MITRE TTP:</strong> {app.mitreTTP}</p>
-              <p><strong>Category:</strong> {app.category}</p>
-              <p><strong>Risk Level:</strong> {app.riskLevel}</p>
-              <p><strong>Date Added:</strong> {app.dateAdded}</p>
-              <p><strong>Tags:</strong> {app.tags.join(', ')}</p>
-              <p><strong>Permissions:</strong> {app.permissions.join(', ')}</p>
-              <p><strong>References:</strong></p>
-              <ul>
-                {app.references.map((ref, refIndex) => (
-                  <li key={refIndex}>
-                    <a href={ref} target="_blank" rel="noopener noreferrer">
-                      {ref}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <p>{app.description}</p>
+              {expandedCard === index && (
+                <div className={styles.cardDetails}>
+                  <p><strong>Contributor:</strong> {app.contributor}</p>
+                  <p><strong>MITRE TTP:</strong> {app.mitreTTP}</p>
+                  <p><strong>Category:</strong> {app.category}</p>
+                  <p><strong>Risk Level:</strong> {app.riskLevel}</p>
+                  <p><strong>Date Added:</strong> {app.dateAdded}</p>
+                  <p><strong>Tags:</strong> {app.tags.join(', ')}</p>
+                  <p><strong>Permissions:</strong> {app.permissions.join(', ')}</p>
+                  <p><strong>References:</strong></p>
+                  <ul>
+                    {app.references.map((ref, refIndex) => (
+                      <li key={refIndex}>
+                        <a href={ref} target="_blank" rel="noopener noreferrer">
+                          {ref}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -81,24 +89,26 @@ export default function Home() {
             onClick={() => toggleExpandCard(expandedCard)}
           >
             <h3>{filteredApps[expandedCard].name}</h3>
-            <p><strong>Description:</strong> {filteredApps[expandedCard].description}</p>
-            <p><strong>Contributor:</strong> {filteredApps[expandedCard].contributor}</p>
-            <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP}</p>
-            <p><strong>Category:</strong> {filteredApps[expandedCard].category}</p>
-            <p><strong>Risk Level:</strong> {filteredApps[expandedCard].riskLevel}</p>
-            <p><strong>Date Added:</strong> {filteredApps[expandedCard].dateAdded}</p>
-            <p><strong>Tags:</strong> {filteredApps[expandedCard].tags.join(', ')}</p>
-            <p><strong>Permissions:</strong> {filteredApps[expandedCard].permissions.join(', ')}</p>
-            <p><strong>References:</strong></p>
-            <ul>
-              {filteredApps[expandedCard].references.map((ref, refIndex) => (
-                <li key={refIndex}>
-                  <a href={ref} target="_blank" rel="noopener noreferrer">
-                    {ref}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <p>{filteredApps[expandedCard].description}</p>
+            <div className={styles.cardDetails}>
+              <p><strong>Contributor:</strong> {filteredApps[expandedCard].contributor}</p>
+              <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP}</p>
+              <p><strong>Category:</strong> {filteredApps[expandedCard].category}</p>
+              <p><strong>Risk Level:</strong> {filteredApps[expandedCard].riskLevel}</p>
+              <p><strong>Date Added:</strong> {filteredApps[expandedCard].dateAdded}</p>
+              <p><strong>Tags:</strong> {filteredApps[expandedCard].tags.join(', ')}</p>
+              <p><strong>Permissions:</strong> {filteredApps[expandedCard].permissions.join(', ')}</p>
+              <p><strong>References:</strong></p>
+              <ul>
+                {filteredApps[expandedCard].references.map((ref, refIndex) => (
+                  <li key={refIndex}>
+                    <a href={ref} target="_blank" rel="noopener noreferrer">
+                      {ref}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </main>

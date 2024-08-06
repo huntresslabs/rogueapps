@@ -1,18 +1,13 @@
 import '../styles/globals.css';
-import Link from 'next/link';
-import styles from '../styles/Layout.module.css';
 import Head from 'next/head';
-import Footer from './Footer';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export const metadata = {
   title: 'RogueApps',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <Head>
@@ -22,11 +17,7 @@ export default function RootLayout({
         />
       </Head>
       <body>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.navLink}>Home</Link>
-          <Link href="/contribute" className={styles.navLink}>Contribute</Link>
-          <Link href="/about" className={styles.navLink}>About</Link>
-        </nav>
+        <Navbar />
         <div style={{ paddingTop: '5rem' }}>{/* To account for the fixed navbar height */}</div>
         {children}
         <Footer />

@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--primary-black);
+    font-family: 'Roboto', sans-serif;
+    position: fixed; /* Fix the navbar at the top */
+    width: 100%;
+    top: 0;
+    z-index: 100; /* Ensure it stays above other content */
+  }
+  
+  .navLink {
+    margin: 0 1rem;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navLink:hover {
+    text-decoration: underline;
+  }
