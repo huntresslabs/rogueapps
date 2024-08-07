@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from '../../styles/About.module.css';
 
 export const metadata = {
   title: 'About - RogueApps',
