@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/rogueapps",
-    output: "export",  // <=== enables static exports
-    reactStrictMode: true,
-  };
-  
-  module.exports = nextConfig;
+  basePath: process.env.NODE_ENV === 'production' ? '/rogueapps' : '',
+  output: 'export',  // Enables static exports
+  reactStrictMode: true,
+};
+
+module.exports = nextConfig;
