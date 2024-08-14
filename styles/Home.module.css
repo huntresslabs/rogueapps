@@ -167,9 +167,9 @@
 }
 
 .tealList code {
-  font-family: 'Roboto', monospace; /* Apply Roboto font for code */
+  font-family: 'Roboto', monospace; 
   color: var(--primary-yellow);
-  background-color: var(--primary-black); /* Optional: Add a light background to mimic code blocks */
-  padding: 2px 4px; /* Optional: Add some padding */
-  border-radius: 4px; /* Optional: Add rounded corners */
+  background-color: var(--primary-black);
+  padding: 2px 4px;
+  border-radius: 4px;
 }
