@@ -6,24 +6,24 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; /* Change to flex-start to left-align items */
+    align-items: flex-start; 
     min-height: 100vh;
-    padding-top: 4rem; /* Add padding to avoid overlap with the navbar */
+    padding-top: 4rem; 
   }
   
   .title {
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-    text-align: left; /* Change to left-align */
+    text-align: left; 
     color: var(--primary-teal);
     font-family: 'Visuelt', sans-serif;
-    margin-bottom: 2rem; /* Add some space below the title */
+    margin-bottom: 2rem; 
   }
   
   .subtitle {
     font-size: 1.5rem;
-    text-align: left; /* Change to left-align */
+    text-align: left; 
     color: var(--primary-black);
     font-family: 'Roboto', sans-serif;
     margin-bottom: 1rem;
@@ -31,7 +31,7 @@
   
   .paragraph {
     font-size: 1rem;
-    text-align: left; /* Change to left-align */
+    text-align: left;
     color: var(--primary-black);
     font-family: 'HK Nova', sans-serif;
     margin-bottom: 1rem;
