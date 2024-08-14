@@ -150,3 +150,26 @@
   border-radius: 10px;
   padding: 2rem;
 }
+
+.tealList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.tealList li {
+  color: var(--primary-teal); 
+  margin-bottom: 8px;
+}
+
+.tealList a {
+  color: var(--primary-teal); 
+  text-decoration: underline;
+}
+
+.tealList code {
+  font-family: 'Roboto', monospace; /* Apply Roboto font for code */
+  color: var(--primary-yellow);
+  background-color: var(--primary-black); /* Optional: Add a light background to mimic code blocks */
+  padding: 2px 4px; /* Optional: Add some padding */
+  border-radius: 4px; /* Optional: Add rounded corners */
+}

@@ -1,13 +1,23 @@
+export interface Permission {
+  resource: string;
+  permission: string;       
+  type: "Delegated" | "Application";  
+}
+
 export interface RogueApp {
-    name: string;
-    description: string;
-    contributor: string;
-    mitreTTP: string;
-    category: string;
-    riskLevel: string;
-    dateAdded: string;
-    tags: string[];
-    references: string[];
-    permissions: string[];
-  }
-  
+  // App specific data
+  appId: string;
+  appDisplayName: string;
+  appOwnerOrganizationId: string;
+  appPublisherName: string;
+  appPublisherId: string;
+  description: string;
+  permissions: Permission[];
+  tags: string[];
+  references: string[];
+  mitreTTP: string[];
+
+  // Contributor data
+  contributor: string;
+  dateAdded: string;
+}

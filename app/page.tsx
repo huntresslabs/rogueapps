@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { RogueApp } from '../lib/types';
 import styles from '../styles/Home.module.css';
 import Callout from './components/Callout';
+import { fetchRogueApps } from '../lib/fetchRogueApps';
 
 export default function Home() {
   const [rogueApps, setRogueApps] = useState<RogueApp[]>([]);
@@ -11,23 +12,24 @@ export default function Home() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   useEffect(() => {
-    async function fetchRogueApps() {
-      const res = await fetch('https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json');
-      const data: RogueApp[] = await res.json();
+    async function loadRogueApps() {
+      const data = await fetchRogueApps();
       setRogueApps(data);
     }
-    fetchRogueApps();
+    loadRogueApps();
   }, []);
 
   const filteredApps = rogueApps.filter(app =>
-    app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.contributor.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.mitreTTP.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.riskLevel.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.tags.join(' ').toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.permissions.join(' ').toLowerCase().includes(searchTerm.toLowerCase())
+    app.appDisplayName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.contributor?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.mitreTTP?.join(', ').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.tags?.join(' ').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.permissions?.some(permission => 
+      permission.resource?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      permission.permission?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      permission.type?.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   );
 
   const toggleExpandCard = (index: number) => {
@@ -56,19 +58,23 @@ export default function Home() {
               className={`${styles.card} ${expandedCard === index ? styles.expanded : ''}`}
               onClick={() => toggleExpandCard(index)}
             >
-              <h3>{app.name}</h3>
+              <h3>{app.appDisplayName}</h3>
               <p>{app.description}</p>
               {expandedCard === index && (
                 <div className={styles.cardDetails}>
                   <p><strong>Contributor:</strong> {app.contributor}</p>
-                  <p><strong>MITRE TTP:</strong> {app.mitreTTP}</p>
-                  <p><strong>Category:</strong> {app.category}</p>
-                  <p><strong>Risk Level:</strong> {app.riskLevel}</p>
-                  <p><strong>Date Added:</strong> {app.dateAdded}</p>
+                  <p><strong>MITRE TTP:</strong> {app.mitreTTP.join(', ')}</p>
                   <p><strong>Tags:</strong> {app.tags.join(', ')}</p>
-                  <p><strong>Permissions:</strong> {app.permissions.join(', ')}</p>
-                  <p><strong>References:</strong></p>
-                  <ul>
+                  <h4>Permissions:</h4>
+                  <ul className={styles.tealList}>
+                    {app.permissions.map((permission, permIndex) => (
+                      <li key={permIndex}>
+                        <code>{permission.resource}:</code> <code>{permission.permission}</code> (<code>{permission.type}</code>)
+                      </li>
+                    ))}
+                  </ul>
+                  <h4>References:</h4>
+                  <ul className={styles.tealList}>
                     {app.references.map((ref, refIndex) => (
                       <li key={refIndex}>
                         <a href={ref} target="_blank" rel="noopener noreferrer">
@@ -88,18 +94,22 @@ export default function Home() {
             className={`${styles.expandedCard} ${styles.card}`}
             onClick={() => toggleExpandCard(expandedCard)}
           >
-            <h3>{filteredApps[expandedCard].name}</h3>
+            <h3>{filteredApps[expandedCard].appDisplayName}</h3>
             <p>{filteredApps[expandedCard].description}</p>
             <div className={styles.cardDetails}>
               <p><strong>Contributor:</strong> {filteredApps[expandedCard].contributor}</p>
-              <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP}</p>
-              <p><strong>Category:</strong> {filteredApps[expandedCard].category}</p>
-              <p><strong>Risk Level:</strong> {filteredApps[expandedCard].riskLevel}</p>
-              <p><strong>Date Added:</strong> {filteredApps[expandedCard].dateAdded}</p>
+              <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP.join(', ')}</p>
               <p><strong>Tags:</strong> {filteredApps[expandedCard].tags.join(', ')}</p>
-              <p><strong>Permissions:</strong> {filteredApps[expandedCard].permissions.join(', ')}</p>
-              <p><strong>References:</strong></p>
-              <ul>
+              <h4>Permissions:</h4>
+              <ul className={styles.tealList}>
+                {filteredApps[expandedCard].permissions.map((permission, permIndex) => (
+                  <li key={permIndex}>
+                    <code>{permission.resource}:</code> <code>{permission.permission}</code> (<code>{permission.type}</code>)
+                  </li>
+                ))}
+              </ul>
+              <h4>References:</h4>
+              <ul className={styles.tealList}>
                 {filteredApps[expandedCard].references.map((ref, refIndex) => (
                   <li key={refIndex}>
                     <a href={ref} target="_blank" rel="noopener noreferrer">
