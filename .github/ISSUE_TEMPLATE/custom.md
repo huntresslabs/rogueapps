@@ -22,4 +22,4 @@ assignees: ''
 * **Date Added:** [the date when the RogueApp was added to the repository]
 
 ### Reference
-The RogueApp specification is defined in [types.ts](../../lib/types.ts). Please submit as much information as you can for each field (it does not have to be 100% complete but please submit everything you can!)
+The RogueApp specification is defined in [types.ts](../lib/types.ts). Please submit as much information as you can for each field (it does not have to be 100% complete but please submit everything you can!)

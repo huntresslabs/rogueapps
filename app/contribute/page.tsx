@@ -7,16 +7,44 @@ interface RogueApp {
   contributor: string;
 }
 
+interface Contributor {
+  name: string;
+  count: number;
+}
+
 export default function Contribute() {
-  const [contributors, setContributors] = useState<string[]>([]);
+  const [contributors, setContributors] = useState<Contributor[]>([]);
 
   useEffect(() => {
     async function fetchContributors() {
-      const res = await fetch('https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json');
-      const data: RogueApp[] = await res.json();
-      const contributorSet = new Set(data.map(app => app.contributor));
-      setContributors(Array.from(contributorSet));
+      let data: RogueApp[];
+
+      if (process.env.NEXT_PUBLIC_ENVIRONMENT === 'development') {
+        const res = await fetch('/rogueapps.json');
+        data = await res.json();
+      } else {
+        const res = await fetch('https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json');
+        data = await res.json();
+      }
+
+      const contributorMap: { [key: string]: number } = {};
+
+      data.forEach(app => {
+        if (contributorMap[app.contributor]) {
+          contributorMap[app.contributor]++;
+        } else {
+          contributorMap[app.contributor] = 1;
+        }
+      });
+
+      const contributorsList = Object.keys(contributorMap).map(name => ({
+        name,
+        count: contributorMap[name]
+      }));
+
+      setContributors(contributorsList);
     }
+
     fetchContributors();
   }, []);
 
@@ -33,7 +61,7 @@ export default function Contribute() {
         <div className={styles.contributorGrid}>
           {contributors.map((contributor, index) => (
             <div key={index} className={styles.contributorItem}>
-              {contributor}
+             🔥 {contributor.name} <span className={styles.yellowText}>x {contributor.count}</span>
             </div>
           ))}
         </div>

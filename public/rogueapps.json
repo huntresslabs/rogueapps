@@ -28,7 +28,7 @@
         "type": "Delegated"
       }
     ],
-    "tags": ["BEC", "email", "spam", "WindowsAzureActiveDirectoryIntegratedApp"],
+    "tags": ["BEC", "email", "spam"],
     "references": [
       "https://www.emclient.com/",
       "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
@@ -38,5 +38,50 @@
 
     "contributor": "Huntress Research Team",
     "dateAdded": "2024-08-05"
+  },
+  {
+    "appId": "ff8d92dc-3d82-41d6-bcbd-b9174d163620",
+    "appDisplayName": "PerfectData Software",
+    "appOwnerOrganizationId": "unknown", 
+    "appPublisherName": "PerfectData Software Ltd.",
+    "appPublisherId": "unknown", 
+    "description": "An applicaiton that can export mailboxes for backup purposes. Used maliciously to exfiltrate data and stage financial fraud transactions.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "offline_access",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "profile",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "User.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "openid",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Exchange",
+        "permission": "EWS.AccessAsUser.All",
+        "type": "Delegated"
+      }
+    ],
+    "tags": ["exfiltration", "BEC", "backup"],
+    "references": [
+      "https://cybercorner.tech/malicious-azure-application-perfectdata-software-and-office365-business-email-compromise/",
+      "https://darktrace.com/blog/how-abuse-of-perfectdata-software-may-create-a-perfect-storm-an-emerging-trend-in-account-takeovers",
+      "https://www.secureworks.com/blog/qr-phishing-leads-to-microsoft-365-account-compromise",
+      "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
+    ],
+    "mitreTTP": [],
+    "contributor": "Huntress Research Team",
+    "dateAdded": "2024-08-14"
   }
 ]
