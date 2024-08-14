@@ -150,3 +150,26 @@
   border-radius: 10px;
   padding: 2rem;
 }
+
+.tealList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.tealList li {
+  color: var(--primary-teal); 
+  margin-bottom: 8px;
+}
+
+.tealList a {
+  color: var(--primary-teal); 
+  text-decoration: underline;
+}
+
+.tealList code {
+  font-family: 'Roboto', monospace; 
+  color: var(--primary-yellow);
+  background-color: var(--primary-black);
+  padding: 2px 4px;
+  border-radius: 4px;
+}

@@ -1,19 +1,42 @@
 [
-    {
-      "name": "eM Client",
-      "description": "A robust email client often leveraged by attackers due to its extensive capabilities. eM Client allows attackers to sync multiple inboxes into the same client, download all emails from an inbox, mass mail spam, export calendars and contacts, and create inbox rules to stage financial transaction fraud.",
-      "contributor": "Huntress Research Team",
-      "mitreTTP": "",
-      "category": "Email Client Application",
-      "riskLevel": "High",
-      "dateAdded": "2024-08-05",
-      "tags": ["BEC", "email", "spam"],
-      "references": [
-        "https://www.emclient.com/",
-        "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
-        "https://cybercorner.tech/malicious-usage-of-em-client-in-business-email-compromise/"
+  {
+    "appId": "e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd",
+    "appDisplayName": "eM Client",
+    "appOwnerOrganizationId": "146ecd75-4414-4ecf-ba6d-ea611895da8c",
+    "appPublisherName": "eM Client s.r.o.",
+    "appPublisherId": "5365206",
+    "description": "A robust email client often leveraged by attackers due to its extensive capabilities. eM Client allows attackers to sync multiple inboxes into the same client, download all emails from an inbox, mass mail spam, export calendars and contacts, and create inbox rules to stage financial transaction fraud.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "EWS.AccessAsUser.All",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "offline_access",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "email",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "openid",
+        "type": "Delegated"
+      }
+    ],
+    "tags": ["BEC", "email", "spam", "WindowsAzureActiveDirectoryIntegratedApp"],
+    "references": [
+      "https://www.emclient.com/",
+      "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
+      "https://cybercorner.tech/malicious-usage-of-em-client-in-business-email-compromise/"
       ],
-      "permissions": ["Microsoft Graph - EWS.AccessAsUser.All- Delegated", "Microsoft Graph - offline_access - Delegated", "Microsoft Graph - email - Delegated", "Microsoft Graph - openid - Delegated" ]
-    }
-  ]
-  
+    "mitreTTP": [],
+
+    "contributor": "Huntress Research Team",
+    "dateAdded": "2024-08-05"
+  }
+]
