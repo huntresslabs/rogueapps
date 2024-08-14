@@ -62,6 +62,9 @@ export default function Home() {
               <p>{app.description}</p>
               {expandedCard === index && (
                 <div className={styles.cardDetails}>
+                  <p><strong>App ID:</strong> {app.appId}</p>
+                  <p><strong>Owner Organization ID:</strong> {app.appOwnerOrganizationId}</p>
+                  <p><strong>Publisher:</strong> {app.appPublisherName}</p>
                   <p><strong>Contributor:</strong> {app.contributor}</p>
                   <p><strong>MITRE TTP:</strong> {app.mitreTTP.join(', ')}</p>
                   <p><strong>Tags:</strong> {app.tags.join(', ')}</p>
@@ -97,6 +100,9 @@ export default function Home() {
             <h3>{filteredApps[expandedCard].appDisplayName}</h3>
             <p>{filteredApps[expandedCard].description}</p>
             <div className={styles.cardDetails}>
+              <p><strong>App ID:</strong> {filteredApps[expandedCard].appId}</p>
+              <p><strong>Owner Organization ID:</strong> {filteredApps[expandedCard].appOwnerOrganizationId}</p>
+              <p><strong>Publisher:</strong> {filteredApps[expandedCard].appPublisherName}</p>
               <p><strong>Contributor:</strong> {filteredApps[expandedCard].contributor}</p>
               <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP.join(', ')}</p>
               <p><strong>Tags:</strong> {filteredApps[expandedCard].tags.join(', ')}</p>
