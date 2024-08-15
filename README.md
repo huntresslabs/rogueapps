@@ -41,4 +41,12 @@ npm run dev
 ```
 The dev server is now live at `localhost:3000`. The app will pull the JSON objects from the local `rogueapps.json` file instead of the live file on GitHub so you can test out adding new RogueApps before they get pushed to prod!
 
-
+### API
+As far as I can tell, Next.js and GitHub pages don't play nice when it comes to exposing an API. But if you want to access the RogueApps dataset, you can curl the GitHub content at `https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json`"
+```bash
+$ curl -s https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json | jq '.[] | select(.tags | index("BEC"))'
+{
+  "appId": "e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd",
+  "appDisplayName": "eM Client",
+  ...[snip]...
+```
