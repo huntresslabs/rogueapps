@@ -45,7 +45,7 @@
     "appOwnerOrganizationId": "unknown", 
     "appPublisherName": "PerfectData Software Ltd.",
     "appPublisherId": "unknown", 
-    "description": "An applicaiton that can export mailboxes for backup purposes. Used maliciously to exfiltrate data and stage financial fraud transactions.",
+    "description": "An application that can export mailboxes for backup purposes. Used maliciously to exfiltrate data and stage financial fraud transactions.",
     "permissions": [
       {
         "resource": "Microsoft Graph",
