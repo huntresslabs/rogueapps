@@ -83,5 +83,66 @@
     "mitreTTP": [],
     "contributor": "Huntress Research Team",
     "dateAdded": "2024-08-14"
+  },
+  {
+    "appId": "a245e8c0-b53c-4b67-9b45-751d1dff8e6b",
+    "appDisplayName": "Newsletter Software Supermailer",
+    "appOwnerOrganizationId": "unknown",
+    "appPublisherName": "unknown",
+    "appPublisherId": "unknown",
+    "description": "Software used for email mass mailing, often abused to send phishing emails. Requires administrator consent to use with Microsoft365, which then allows the application to send from any mailbox within the tenant.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Contacts.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.Send",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "offline_access",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.Read",
+        "type": "Application"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.Send",
+        "type": "Application"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Contacts.Read",
+        "type": "Application"
+      }
+    ],
+    "tags": ["BEC", "spam", "phishing"],
+    "references": [
+      "https://int.supermailer.de/",
+      "https://www.darkreading.com/endpoint-security/supermailer-abuse-email-security-super-sized-credential-theft",
+      "https://trustifi.com/blog/what-is-a-supermailer-email-phishing-attack/",
+      "https://darktrace.com/blog/business-email-compromise-to-mass-phishing-campaign-attack-analysis",
+      "https://www.linkedin.com/posts/damien-miller-mcandrews_businessemailcompromise-activity-7231350791607881732-UAWJ?utm_source=share&utm_medium=member_desktop"
+    ],
+    "mitreTTP": [
+      "T1583.006",
+      "T1566",
+      "T1588.002",
+      "T1657"
+    ],
+    "contributor": "Syne0",
+    "dateAdded": "2024-08-23"
   }
 ]

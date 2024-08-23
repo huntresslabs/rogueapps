@@ -11,6 +11,7 @@ assignees: ''
 
 * **Contributor Name:** [your name, research group name, or handle]
 * **RogueApp Name:** [the name of the RogueApp]
+* **RogueApp ID**: [the application ID]
 * **RogueApp Description:** [the description of the RogueApp and the summary of how it is used maliciously.]
 * **App Owner Organization ID:** [the ID of the organization that owns the RogueApp]
 * **App Publisher Name:** [the name of the publisher of the RogueApp]
