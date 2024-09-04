@@ -1,7 +1,7 @@
 export interface Permission {
   resource: string;
-  permission: string;       
-  type: "Delegated" | "Application";  
+  permission: string;
+  type: "Delegated" | "Application";
 }
 
 export interface RogueApp {
@@ -18,6 +18,6 @@ export interface RogueApp {
   mitreTTP: string[];
 
   // Contributor data
-  contributor: string;
+  contributors: string[];
   dateAdded: string;
 }

@@ -22,10 +22,10 @@ export default function Home() {
   const filteredApps = rogueApps.filter(app =>
     app.appDisplayName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     app.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.contributor?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.mitreTTP?.join(', ').toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.tags?.join(' ').toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.permissions?.some(permission => 
+    (Array.isArray(app.contributors) ? app.contributors.join(', ').toLowerCase().includes(searchTerm.toLowerCase()) : false) ||
+    (Array.isArray(app.mitreTTP) ? app.mitreTTP.join(', ').toLowerCase().includes(searchTerm.toLowerCase()) : false) ||
+    (Array.isArray(app.tags) ? app.tags.join(' ').toLowerCase().includes(searchTerm.toLowerCase()) : false) ||
+    app.permissions?.some(permission =>
       permission.resource?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       permission.permission?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       permission.type?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -62,13 +62,20 @@ export default function Home() {
               <p>{app.description}</p>
               {expandedCard === index && (
                 <div className={styles.cardDetails}>
-                  <p><strong>App ID:</strong> {app.appId}</p>
-                  <p><strong>Owner Organization ID:</strong> {app.appOwnerOrganizationId}</p>
-                  <p><strong>Publisher:</strong> {app.appPublisherName}</p>
-                  <p><strong>Contributor:</strong> {app.contributor}</p>
-                  <p><strong>MITRE TTP:</strong> {app.mitreTTP.join(', ')}</p>
-                  <p><strong>Tags:</strong> {app.tags.join(', ')}</p>
-                  <h4>Permissions:</h4>
+                  <p><strong>App ID: </strong> {app.appId}</p>
+                  <p><strong>Owner Organization ID: </strong> {app.appOwnerOrganizationId}</p>
+                  <p><strong>Publisher: </strong> {app.appPublisherName}</p>
+                  <p>
+                    <strong>Contributors: </strong>
+                    {Array.isArray(app.contributors) && app.contributors.length > 0
+                      ? app.contributors.length === 1
+                        ? app.contributors[0]
+                        : app.contributors.join(', ')
+                      : 'N/A'}
+                  </p>
+                  <p><strong>MITRE TTP: </strong> {Array.isArray(app.mitreTTP) ? app.mitreTTP.join(', ') : 'N/A'}</p>
+                  <p><strong>Tags: </strong> {Array.isArray(app.tags) ? app.tags.join(', ') : 'N/A'}</p>
+                  <h4>Permissions: </h4>
                   <ul className={styles.tealList}>
                     {app.permissions.map((permission, permIndex) => (
                       <li key={permIndex}>
@@ -76,7 +83,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <h4>References:</h4>
+                  <h4>References: </h4>
                   <ul className={styles.tealList}>
                     {app.references.map((ref, refIndex) => (
                       <li key={refIndex}>
@@ -100,12 +107,19 @@ export default function Home() {
             <h3>{filteredApps[expandedCard].appDisplayName}</h3>
             <p>{filteredApps[expandedCard].description}</p>
             <div className={styles.cardDetails}>
-              <p><strong>App ID:</strong> {filteredApps[expandedCard].appId}</p>
-              <p><strong>Owner Organization ID:</strong> {filteredApps[expandedCard].appOwnerOrganizationId}</p>
-              <p><strong>Publisher:</strong> {filteredApps[expandedCard].appPublisherName}</p>
-              <p><strong>Contributor:</strong> {filteredApps[expandedCard].contributor}</p>
-              <p><strong>MITRE TTP:</strong> {filteredApps[expandedCard].mitreTTP.join(', ')}</p>
-              <p><strong>Tags:</strong> {filteredApps[expandedCard].tags.join(', ')}</p>
+              <p><strong>App ID: </strong> {filteredApps[expandedCard].appId}</p>
+              <p><strong>Owner Organization ID: </strong> {filteredApps[expandedCard].appOwnerOrganizationId}</p>
+              <p><strong>Publisher: </strong> {filteredApps[expandedCard].appPublisherName}</p>
+              <p>
+                <strong>Contributors: </strong>
+                {Array.isArray(filteredApps[expandedCard].contributors) && filteredApps[expandedCard].contributors.length > 0
+                  ? filteredApps[expandedCard].contributors.length === 1
+                    ? filteredApps[expandedCard].contributors[0]
+                    : filteredApps[expandedCard].contributors.join(', ')
+                  : 'N/A'}
+              </p>
+              <p><strong>MITRE TTP:</strong> {Array.isArray(filteredApps[expandedCard].mitreTTP) ? filteredApps[expandedCard].mitreTTP.join(', ') : 'N/A'}</p>
+              <p><strong>Tags:</strong> {Array.isArray(filteredApps[expandedCard].tags) ? filteredApps[expandedCard].tags.join(', ') : 'N/A'}</p>
               <h4>Permissions:</h4>
               <ul className={styles.tealList}>
                 {filteredApps[expandedCard].permissions.map((permission, permIndex) => (

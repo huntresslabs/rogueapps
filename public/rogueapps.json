@@ -28,23 +28,28 @@
         "type": "Delegated"
       }
     ],
-    "tags": ["BEC", "email", "spam"],
+    "tags": [
+      "BEC",
+      "email",
+      "spam"
+    ],
     "references": [
       "https://www.emclient.com/",
       "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
       "https://cybercorner.tech/malicious-usage-of-em-client-in-business-email-compromise/"
-      ],
+    ],
     "mitreTTP": [],
-
-    "contributor": "Huntress Research Team",
+    "contributors": [
+      "Huntress Research Team"
+    ],
     "dateAdded": "2024-08-05"
   },
   {
     "appId": "ff8d92dc-3d82-41d6-bcbd-b9174d163620",
     "appDisplayName": "PerfectData Software",
-    "appOwnerOrganizationId": "unknown", 
+    "appOwnerOrganizationId": "unknown",
     "appPublisherName": "PerfectData Software Ltd.",
-    "appPublisherId": "unknown", 
+    "appPublisherId": "unknown",
     "description": "An application that can export mailboxes for backup purposes. Used maliciously to exfiltrate data and stage financial fraud transactions.",
     "permissions": [
       {
@@ -73,7 +78,11 @@
         "type": "Delegated"
       }
     ],
-    "tags": ["exfiltration", "BEC", "backup"],
+    "tags": [
+      "exfiltration",
+      "BEC",
+      "backup"
+    ],
     "references": [
       "https://cybercorner.tech/malicious-azure-application-perfectdata-software-and-office365-business-email-compromise/",
       "https://darktrace.com/blog/how-abuse-of-perfectdata-software-may-create-a-perfect-storm-an-emerging-trend-in-account-takeovers",
@@ -81,7 +90,9 @@
       "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
     "mitreTTP": [],
-    "contributor": "Huntress Research Team",
+    "contributors": [
+      "Huntress Research Team"
+    ],
     "dateAdded": "2024-08-14"
   },
   {
@@ -128,7 +139,11 @@
         "type": "Application"
       }
     ],
-    "tags": ["BEC", "spam", "phishing"],
+    "tags": [
+      "BEC",
+      "spam",
+      "phishing"
+    ],
     "references": [
       "https://int.supermailer.de/",
       "https://www.darkreading.com/endpoint-security/supermailer-abuse-email-security-super-sized-credential-theft",
@@ -142,7 +157,9 @@
       "T1588.002",
       "T1657"
     ],
-    "contributor": "Syne0",
+    "contributors": [
+      "Syne0"
+    ],
     "dateAdded": "2024-08-23"
   }
 ]
