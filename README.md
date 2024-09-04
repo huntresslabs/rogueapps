@@ -13,6 +13,16 @@ If you want to contribue to the RogueApps project, please review the [Wiki Contr
 When a contribution is accepted into the repo, add the details of the contribution to the `rogueapps.json` file located in `public/`. The production data for rendering rogue apps to the site is pulled live from `https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json`, so new entries must be merged into main to go live on the actual site.
 
 ## Development Guide
+### Docker Quickstart
+
+Clone the repo and then run the following from the root directory:
+
+```
+docker build -t rogueapps .
+
+docker run -it -p 3000:3000 rogueapps
+```
+
 ### Dev Install
 
 First, clone the repository (main or dev branch).
