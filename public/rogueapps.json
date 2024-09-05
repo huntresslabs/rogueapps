@@ -162,5 +162,70 @@
       "Syne0"
     ],
     "dateAdded": "2024-08-23"
+  },
+  {
+    "appId": "b15665d9-eda6-4092-8539-0eec376afd59",
+    "appDisplayName": "rclone",
+    "appOwnerOrganizationId": "unknown",
+    "appPublisherName": "unknown",
+    "appPublisherId": "unknown",
+    "description": "Rclone is a command-line program to manage files on cloud storage. It allows the user to download all files the user account can access within OneDrive and SharePoint.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Files.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Files.ReadWrite",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Files.Read.All",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Files.ReadWrite.All",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Sites.Read.All",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Files.ReadWrite",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "offline_access",
+        "type": "Delegated"
+      }
+    ],
+    "tags": [
+      "exfiltration",
+      "BEC"
+    ],
+    "references": [
+      "https: //attack.mitre.org/software/S1040/",
+      "https: //rclone.org/onedrive/",
+      "https: //www.kroll.com/en/insights/publications/cyber/new-m365-business-email-compromise-attacks-with-rclone",
+      "https: //github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
+    ],
+    "mitreTTP": [
+      "T1567",
+      "T1083",
+      "T1048"
+    ],
+    "contributors": [
+      "Syne0",
+      "randomaccess3"
+    ],
+    "dateAdded": "2024-09-05"
   }
 ]

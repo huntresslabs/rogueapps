@@ -19,8 +19,10 @@ export default function About() {
         <p>RogueApps are OIDC/OAuth 2.0 applications that, while not explicitly evil, are often abused and used maliciously. This repository documents the emerging attack surface of SaaS, OIDC, and OAuth 2.0 applications that help attackers during intrusions. If the application was not specifically created for evil purposes, but has been observed during identity compromises, it's a RogueApp.</p>
         <p>This project aims to surface OIDC/OAuth 2.0 application tradecraft to aid defenders in detection, deterrence, and mitigation of application attacks in the SaaS world.</p>
         <p>The repository for this project is open source and available <a href="https://github.com/huntresslabs/rogueapps">here!</a></p>
+        <h3>⚠ Disclaimer ⚠</h3>
+        <p>This repository documents the tradecraft of OAuth applications and how they are used in attacks. This repository cannot perform a full investigation for any specific instance of an application to determine if it is malicious or not. This repository should only be used as a reference and for education.</p>
         <h3>Acknowledgements</h3>
-        <p>RogueApps was inspired by <a href="https://wtfbins.wtf/">WTFBins</a>, which is the excellent work of <a href="https://taggartinstitute.org/">The Taggart Institute / Michael Taggart</a>. Thank you to TTI/Taggart!</p>  
+        <p>RogueApps was inspired by <a href="https://wtfbins.wtf/">WTFBins</a>, which is the excellent work of <a href="https://taggartinstitute.org/">The Taggart Institute / Michael Taggart</a>. Thank you to TTI/Taggart!</p>
         <p>RogueApps was created by Matt Kiely, Principal Security Researcher at Huntress, and the Huntress Research Team.</p>
       </main>
     </div>
