@@ -212,10 +212,10 @@
       "BEC"
     ],
     "references": [
-      "https: //attack.mitre.org/software/S1040/",
-      "https: //rclone.org/onedrive/",
-      "https: //www.kroll.com/en/insights/publications/cyber/new-m365-business-email-compromise-attacks-with-rclone",
-      "https: //github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
+      "https://attack.mitre.org/software/S1040/",
+      "https://rclone.org/onedrive/",
+      "https://www.kroll.com/en/insights/publications/cyber/new-m365-business-email-compromise-attacks-with-rclone",
+      "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
     "mitreTTP": [
       "T1567",
