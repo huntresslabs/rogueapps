@@ -227,5 +227,53 @@
       "randomaccess3"
     ],
     "dateAdded": "2024-09-05"
+  },
+  {
+    "appID": "a43e5392-f48b-46a4-a0f1-098b5eeb4757",
+    "appDisplayName": "CloudSponge",
+    "appOwnerOrganizationId": "unknown",
+    "appPublisherName": "unknown",
+    "appPublisherId": "unknown",
+    "description": "CloudSponge allows you to export all contacts from an inbox. These contacts can be used as targets for phishing emails, allowing an email compromise campaign to spread more.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "openid",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "profile",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Contacts.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "People.Read",
+        "type": "Delegated"
+      }
+    ],
+    "tags": [
+      "exfiltration",
+      "BEC",
+      "AddressBook"
+    ],
+    "references": [
+      "https://www.exportmycontacts.com",
+      "https://cybercorner.tech/common-oauth-apps-used-in-business-email-compromise/#cloudsponge",
+      "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
+    ],
+    "mitreTTP": [
+      "T1567"
+    ],
+    "contributors": [
+      "Syne0",
+      "randomaccess3"
+    ],
+    "dateAdded": "2024-09-29"
   }
 ]
