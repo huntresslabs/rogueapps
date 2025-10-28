@@ -8,8 +8,8 @@ export default function Callout() {
       <p className={styles.calloutText}>
         Help us document emerging OAuth application tradecraft. If you've ever seen a RogueApp in the wild, please contribute to the project!
       </p>
-      <Link href="/contribute" legacyBehavior>
-        <a className={styles.calloutButton}>Contribute</a>
+      <Link href="/contribute" className={styles.calloutButton}>
+        Contribute
       </Link>
     </div>
   );

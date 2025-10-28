@@ -5,13 +5,8 @@ import '../styles/globals.css';
 export const metadata = {
   title: 'RogueApps',
   description: 'RogueApps: when good OAuth apps go rogue.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   keywords: 'OAuth, security, rogue apps, Huntress',
   robots: 'index, follow',
-  themeColor: '#00f49c',
   icons: {
     icon: 'https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/favicon.ico',
   },
@@ -32,6 +27,12 @@ export const metadata = {
     site: '@HuntressLabs',
     creator: '@HuntressLabs',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#00f49c',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

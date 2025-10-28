@@ -3,10 +3,11 @@ import styles from '../../styles/About.module.css';
 export const metadata = {
   title: 'About RogueApps',
   description: 'Learn more about RogueApps.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#00f49c',
 };
 
