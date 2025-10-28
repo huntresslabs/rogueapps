@@ -317,12 +317,12 @@
       },
       {
         "resource": "Microsoft Graph",
-        "permission": " User.Read",
+        "permission": "User.Read",
         "type": "Delegated"
       }
     ],
     "tags": [
-      "collecion",
+      "collection",
       "exfiltration",
       "phishing",
       "BEC"
