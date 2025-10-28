@@ -1,26 +1,40 @@
-# Use the official Node.js 18 image as the base image
-FROM node:18
+# Use the official Node.js 24 image as the base image
+FROM node:24-alpine AS base
 
-# Set the working directory inside the container
+# Install dependencies only when needed
+FROM base AS deps
 WORKDIR /app
 
-# Copy package.json files first for caching layer purposes
-COPY package.json ./
+# Copy package files
+COPY package.json package-lock.json* ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
-# Copy the rest of the application files to the working directory
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Build the Next.js application
+ENV NEXT_PUBLIC_ENVIRONMENT=production
 RUN npm run build
 
-# Expose the port that the Next.js app will run on
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+
+# Copy the built static files from the builder stage
+COPY --from=builder /app/out ./out
+
+# Expose the port
 EXPOSE 3000
 
-# Set the environment variable in the .env.local file
-RUN echo "NEXT_PUBLIC_ENVIRONMENT=development" > .env.local
+# Since this is a static export, we'll use serve to serve the static files
+RUN npm install -g serve
 
-# Start the Next.js application
-CMD ["npm", "run", "dev"]
+# Start the server
+CMD ["serve", "-s", "out", "-l", "3000"]
