@@ -53,9 +53,9 @@
   {
     "appId": "ff8d92dc-3d82-41d6-bcbd-b9174d163620",
     "appDisplayName": "PerfectData Software",
-    "appOwnerOrganizationId": "unknown",
-    "appPublisherName": "PerfectData Software Ltd.",
-    "appPublisherId": "unknown",
+    "appOwnerOrganizationId": "f094ec52-8e94-47b5-851b-2fcd0e31db52",
+    "appPublisherName": "PERFECTDATA SOFTWARE",
+    "appPublisherId": "6499393",
     "description": "An application that can export mailboxes for backup purposes. Used maliciously to exfiltrate data and stage financial fraud transactions.",
     "permissions": [
       {
@@ -98,7 +98,8 @@
     "mitreTTP": [],
     "contributors": [
       "Huntress Research Team",
-      "randomaccess3"
+      "randomaccess3",
+      "lukesteward"
     ],
     "dateAdded": "2024-08-14"
   },
@@ -156,7 +157,7 @@
       "https://www.darkreading.com/endpoint-security/supermailer-abuse-email-security-super-sized-credential-theft",
       "https://trustifi.com/blog/what-is-a-supermailer-email-phishing-attack/",
       "https://darktrace.com/blog/business-email-compromise-to-mass-phishing-campaign-attack-analysis",
-      "https://www.linkedin.com/posts/damien-miller-mcandrews_businessemailcompromise-activity-7231350791607881732-UAWJ?utm_source=share&utm_medium=member_desktop"
+      "https://www.linkedin.com/posts/damien-miller-mcandrews_businessemailcompromise-activity-7231350791607881732-UAWJ"
     ],
     "mitreTTP": [
       "T1583.006",
@@ -317,12 +318,12 @@
       },
       {
         "resource": "Microsoft Graph",
-        "permission": "User.Read",
+        "permission": " User.Read",
         "type": "Delegated"
       }
     ],
     "tags": [
-      "collection",
+      "collecion",
       "exfiltration",
       "phishing",
       "BEC"
@@ -342,5 +343,88 @@
       "randomaccess3"
     ],
     "dateAdded": "2025-3-24"
+  },
+  {
+    "appId": "2ef68ccc-8a4d-42ff-ae88-2d7bb89ad139",
+    "appDisplayName": "Mail_Backup",
+    "appOwnerOrganizationId": "f094ec52-8e94-47b5-851b-2fcd0e31db52",
+    "appPublisherName": "PERFECTDATA SOFTWARE",
+    "appPublisherId": "6499393",
+    "description": "Exports mailboxes for backup purposes, used by threat actors to exfiltrate email. This is the new name for PERFECTDATA SOFTWARE, representing a rebrand of the same malicious application.",
+    "permissions": [
+      {
+        "resource": "Microsoft Graph",
+        "permission": "offline_access",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "profile",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "User.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "openid",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "MailboxFolder.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Contacts.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Calendars.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "MailboxSettings.Read",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "Mail.ReadWrite",
+        "type": "Delegated"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "permission": "MailboxFolder.ReadWrite",
+        "type": "Delegated"
+      }
+    ],
+    "tags": [
+      "exfiltration",
+      "BEC",
+      "backup"
+    ],
+    "references": [
+      "https://cybercorner.tech/malicious-azure-application-perfectdata-software-and-office365-business-email-compromise/",
+      "https://darktrace.com/blog/how-abuse-of-perfectdata-software-may-create-a-perfect-storm-an-emerging-trend-in-account-takeovers",
+      "https://www.secureworks.com/blog/qr-phishing-leads-to-microsoft-365-account-compromise",
+      "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
+    ],
+    "mitreTTP": [],
+    "contributors": [
+      "Syne0",
+      "randomaccess3",
+      "lukesteward"
+    ],
+    "dateAdded": "2024-09-11"
   }
 ]
