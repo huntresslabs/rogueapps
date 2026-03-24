@@ -4,7 +4,7 @@ build:
 	zola build
 
 serve:
-	zola serve --port 1111
+	zola serve --port 8080
 
 clean:
 	rm -rf public/
