@@ -10,9 +10,9 @@
         </h3>
         <input type="text" id="search-input" placeholder="Search..." class="search">
 
-        {% set data = load_data(path="static/rogueapps.json") %}
+        {% set data = load_data(path="data/rogueapps.toml") %}
         <div class="grid" id="card-grid">
-            {% for app in data %}
+            {% for app in data.apps %}
             <div class="card" data-index="{{ loop.index0 }}" data-name="{{ app.appDisplayName | lower }}"
                 data-description="{{ app.description | lower }}"
                 data-contributors="{% if app.contributors %}{{ app.contributors | join(sep=', ') | lower }}{% endif %}"

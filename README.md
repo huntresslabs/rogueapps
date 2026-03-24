@@ -1,4 +1,5 @@
 # RogueApps
+
 When Apps Go Rogue.
 
 This repository documents observed the TTPs associated with OIDC/OAuth 2.0 application attacks.
@@ -11,7 +12,7 @@ If you want to contribute to the RogueApps project, please review the [Wiki Cont
 
 ## Adding Contributions
 
-When a contribution is accepted into the repo, add the details of the contribution to the `rogueapps.json` file located in `static/`. New entries must be merged into main to go live on the actual site.
+When a contribution is accepted into the repo, add the details of the contribution to the `rogueapps.toml` file located in `data/`. Each app is defined as an `[[apps]]` block with `[[apps.permissions]]` sub-tables. New entries must be merged into main to go live on the actual site.
 
 ## Development Guide
 
@@ -46,14 +47,4 @@ Clone the repo and then run the following from the root directory:
 ```bash
 docker build -t rogueapps .
 docker run -it -p 8080:8080 rogueapps
-```
-
-### API
-If you want to access the RogueApps dataset, you can curl the GitHub content at `https://raw.githubusercontent.com/huntresslabs/rogueapps/main/static/rogueapps.json`, i.e.:
-```bash
-$ curl -s https://raw.githubusercontent.com/huntresslabs/rogueapps/main/static/rogueapps.json | jq '.[] | select(.tags | index("BEC"))'
-{
-  "appId": "e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd",
-  "appDisplayName": "eM Client",
-  ...[snip]...
 ```
