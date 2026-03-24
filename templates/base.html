@@ -28,8 +28,8 @@
     <meta name="twitter:site" content="{{ config.extra.twitter_site }}">
     <meta name="twitter:creator" content="{{ config.extra.twitter_creator }}">
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/globals.css">
+    <link rel="manifest" href="{{ get_url(path='manifest.json') }}">
+    <link rel="stylesheet" href="{{ get_url(path='css/globals.css') }}">
     {% block head %}{% endblock %}
 </head>
 
