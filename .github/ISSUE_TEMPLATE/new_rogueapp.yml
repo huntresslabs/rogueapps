@@ -107,10 +107,4 @@ body:
       description: "Date the RogueApp was added to the repository (YYYY-MM-DD)"
       placeholder: "e.g., 2025-10-28"
 
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ### Reference
-        The RogueApp specification is defined in [types.ts](../lib/types.ts).  
-        Please submit as much information as possible for each field — partial submissions are welcome.
+      
