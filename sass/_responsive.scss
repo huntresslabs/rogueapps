@@ -94,6 +94,20 @@
     .search {
         font-size: 0.95rem;
     }
+
+    .prose {
+        h1 {
+            font-size: 1.85rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .page-content {
+        padding: 2rem 0 3rem;
+    }
 }
 
 // --- Widescreen (≥ 1400px) ---

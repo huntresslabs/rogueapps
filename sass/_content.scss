@@ -2,40 +2,114 @@
 // Content Pages (About, Contribute)
 // ============================================
 
-.main {
+// Override centered layout for content pages
+.page-content {
+    align-items: flex-start;
+    padding: 3rem 0 4rem;
+}
+
+// Prose container — readable line length, left-aligned
+.prose {
+    width: 100%;
+    max-width: 780px;
+
     h1 {
         color: var(--primary-green);
-        font-size: 2.25rem;
-        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem;
+        line-height: 1.15;
     }
 
     h2 {
         color: var(--white-2);
-        font-size: 1.5rem;
-        margin-top: 2rem;
+        font-size: 1.4rem;
+        margin: 2.5rem 0 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-gray);
     }
 
     h3 {
         color: var(--gray-100);
-        font-size: 1.2rem;
-    }
-
-    blockquote {
-        border-left: 3px solid var(--primary-green);
-        margin: 1.5rem 0;
-        padding: 0.75rem 1.25rem;
-        background: rgba($primary-green, 0.04);
-        border-radius: 0 8px 8px 0;
-        color: var(--gray-100);
+        font-size: 1.15rem;
+        margin: 2rem 0 0.5rem;
     }
 
     p {
         color: var(--gray-100);
+        margin: 0 0 1rem;
+        line-height: 1.7;
 
         a {
             text-decoration: underline;
-            text-underline-offset: 2px;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba($primary-green, 0.4);
+
+            &:hover {
+                text-decoration-color: var(--primary-green);
+            }
         }
+    }
+
+    strong {
+        color: var(--white-2);
+    }
+
+    ul,
+    ol {
+        color: var(--gray-100);
+        padding-left: 1.5rem;
+        margin: 0 0 1.25rem;
+
+        li {
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+
+            strong {
+                color: var(--primary-green);
+            }
+        }
+    }
+
+    ol li {
+        padding-left: 0.25rem;
+    }
+
+    blockquote {
+        border-left: 3px solid var(--primary-yellow);
+        margin: 1.5rem 0;
+        padding: 1rem 1.5rem;
+        background: rgba($primary-yellow, 0.05);
+        border-radius: 0 8px 8px 0;
+        color: var(--gray-100);
+
+        p {
+            margin: 0;
+
+            strong {
+                color: var(--primary-yellow);
+            }
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--border-gray);
+        margin: 2.5rem 0;
+    }
+
+    // Smaller, muted sections (disclaimer, acknowledgements)
+    hr+h2 {
+        font-size: 1.1rem;
+        color: var(--accessible-components--dark-grey);
+        border-bottom: none;
+        margin-top: 0.5rem;
+    }
+
+    hr+h2+p {
+        font-size: 0.9rem;
+        color: var(--accessible-components--dark-grey);
+        line-height: 1.65;
     }
 }
 
@@ -53,17 +127,19 @@
 
 .contributor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
     width: 100%;
+    margin-top: 1rem;
 }
 
 .contributor-item {
     background-color: var(--primary-black);
     border: 1px solid var(--border-gray);
     border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.92rem;
     box-shadow: var(--card-shadow);
     transition:
         border-color $transition-normal,
