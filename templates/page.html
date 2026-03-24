@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block twitter_title %}{{ page.title }}{% endblock %}
+{% block twitter_description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <main class="main">
+        {{ page.content | safe }}
+    </main>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if page.extra.scripts %}
+{% for script in page.extra.scripts %}
+<script src="{{ script }}"></script>
+{% endfor %}
+{% endif %}
+{% endblock %}
