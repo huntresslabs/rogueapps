@@ -18,7 +18,7 @@
 {% block scripts %}
 {% if page.extra.scripts %}
 {% for script in page.extra.scripts %}
-<script src="{{ script }}"></script>
+<script src="{{ get_url(path=script) }}"></script>
 {% endfor %}
 {% endif %}
 {% endblock %}

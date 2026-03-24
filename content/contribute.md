@@ -1,9 +1,7 @@
 +++
 title = "Contribute to RogueApps"
 description = "Contribute to the RogueApps project."
-
-[extra]
-scripts = ["/js/contributors.js"]
+template = "contribute.html"
 +++
 
 # Contribute to RogueApps
@@ -15,5 +13,3 @@ If you want to contribute to the RogueApps project, please [open an Issue in the
 ---
 
 ## Thank you to our Contributors! 💖 {#contributors-heading}
-
-<div id="contributor-grid" class="contributor-grid"></div>

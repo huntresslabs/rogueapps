@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block twitter_title %}{{ page.title }}{% endblock %}
+{% block twitter_description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <main class="main">
+        {{ page.content | safe }}
+
+        {% set data = load_data(path="data/rogueapps.toml") %}
+        <div id="contributor-grid" class="contributor-grid">
+            {% set_global contributor_map = [] %}
+            {% for app in data.apps %}
+            {% if app.contributors %}
+            {% for c in app.contributors %}
+            {% if c != "Huntress Research Team" %}
+            {% set_global contributor_map = contributor_map | concat(with=c) %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+            {% set_global unique_contributors = [] %}
+            {% for c in contributor_map %}
+            {% if c not in unique_contributors %}
+            {% set_global unique_contributors = unique_contributors | concat(with=c) %}
+            {% endif %}
+            {% endfor %}
+
+            {% for name in unique_contributors %}
+            {% set_global count = 0 %}
+            {% for c in contributor_map %}
+            {% if c == name %}
+            {% set_global count = count + 1 %}
+            {% endif %}
+            {% endfor %}
+            <div class="contributor-item">
+                🔥 {{ name }} <span class="yellow-text">x {{ count }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+{% endblock %}
