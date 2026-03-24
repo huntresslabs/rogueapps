@@ -1,0 +1,126 @@
+// ============================================
+// Card Grid & Cards
+// ============================================
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+// --- Card ---
+.card {
+    background-color: var(--primary-black);
+    border: 1px solid var(--border-gray);
+    border-top: 3px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    transition:
+        border-color $transition-normal,
+        transform $transition-normal,
+        box-shadow $transition-normal;
+
+    &:hover {
+        border-color: var(--primary-green);
+        transform: translateY(-3px);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    h3 {
+        margin: 0 0 0.5rem;
+        color: var(--primary-green);
+        font-size: 1.15rem;
+    }
+
+    >p {
+        color: var(--gray-100);
+        line-height: 1.6;
+        margin: 0 0 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.92rem;
+    }
+}
+
+// --- Tag Chips ---
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba($primary-teal, 0.12);
+    color: var(--primary-teal);
+    border: 1px solid rgba($primary-teal, 0.25);
+}
+
+// --- Card Details (expanded view) ---
+.card-details {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-gray);
+
+    p {
+        margin: 0.5rem 0;
+        font-size: 0.92rem;
+    }
+
+    strong {
+        color: var(--white-2);
+    }
+
+    code {
+        color: var(--red-code);
+        background: rgba(255, 255, 255, 0.06);
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.85em;
+    }
+
+    h4 {
+        color: var(--gray-100);
+        font-size: 0.95rem;
+        margin: 1.25rem 0 0.5rem;
+        font-weight: 600;
+    }
+}
+
+// --- Teal List ---
+.teal-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0.25rem 0;
+
+    li {
+        color: var(--primary-teal);
+        margin-bottom: 0.35rem;
+        font-size: 0.9rem;
+    }
+
+    a {
+        color: var(--primary-teal);
+        word-break: break-all;
+
+        &:hover {
+            color: var(--primary-green);
+        }
+    }
+}

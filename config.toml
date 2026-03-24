@@ -1,7 +1,7 @@
 base_url = "https://huntresslabs.github.io/rogueapps"
 title = "RogueApps"
 description = "RogueApps: when good OAuth apps go rogue."
-compile_sass = false
+compile_sass = true
 build_search_index = false
 generate_feeds = false
 

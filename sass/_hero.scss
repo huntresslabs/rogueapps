@@ -1,0 +1,65 @@
+// ============================================
+// Hero Section
+// ============================================
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0 2rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 400px;
+        background: radial-gradient(ellipse, rgba($primary-green, 0.06) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.title {
+    margin: 0;
+    line-height: 1.1;
+    font-size: 3.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-green);
+    letter-spacing: -0.01em;
+}
+
+.powered-by {
+    text-align: center;
+    color: var(--gray-100);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+
+    a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.app-count {
+    color: var(--accessible-components--dark-grey);
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+    font-weight: 400;
+}

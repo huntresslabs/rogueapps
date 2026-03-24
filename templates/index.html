@@ -3,14 +3,31 @@
 {% block content %}
 <div class="container">
     <main class="main">
-        <h1 class="title">RogueApps</h1>
-        <h3 class="powered-by">
-            When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank"
-                rel="noopener noreferrer">Huntress</a>
-        </h3>
-        <input type="text" id="search-input" placeholder="Search..." class="search">
-
         {% set data = load_data(path="data/rogueapps.toml") %}
+
+        <section class="hero">
+            <h1 class="title">RogueApps</h1>
+            <h3 class="powered-by">
+                When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank"
+                    rel="noopener noreferrer">Huntress</a>
+            </h3>
+            <p class="app-count">Tracking {{ data.apps | length }} rogue applications</p>
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input type="text" id="search-input" placeholder="Search apps, tags, permissions..." class="search"
+                    autocomplete="off">
+            </div>
+            <div class="search-meta" id="search-meta" aria-live="polite"></div>
+        </section>
+
+        <div class="no-results" id="no-results">
+            <p>No matching applications found. Try a different search term.</p>
+        </div>
+
         <div class="grid" id="card-grid">
             {% for app in data.apps %}
             <div class="card" data-index="{{ loop.index0 }}" data-name="{{ app.appDisplayName | lower }}"
@@ -22,6 +39,13 @@
                 onclick="toggleExpandCard({{ loop.index0 }})">
                 <h3>{{ app.appDisplayName }}</h3>
                 <p>{{ app.description }}</p>
+                {% if app.tags and app.tags | length > 0 %}
+                <div class="card-tags">
+                    {% for tag in app.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
                 <div class="card-details" style="display:none;">
                     <p><strong>App ID: </strong> {{ app.appId }}</p>
                     <p><strong>Owner Organization ID: </strong> {{ app.appOwnerOrganizationId }}</p>
@@ -70,7 +94,8 @@
             {% endfor %}
         </div>
 
-        <div class="expanded-card-overlay" id="expanded-overlay" style="display:none;">
+        <div class="expanded-card-overlay" id="expanded-overlay" role="dialog" aria-modal="true"
+            aria-label="Application details">
             <div class="expanded-card card" id="expanded-card"></div>
         </div>
     </main>

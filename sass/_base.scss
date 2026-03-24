@@ -1,0 +1,70 @@
+// ============================================
+// Base / Reset
+// ============================================
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+::selection {
+    background: rgba(0, 244, 156, 0.3);
+    color: var(--white-2);
+}
+
+body {
+    margin: 0;
+    font-family: $font-body;
+    font-weight: 400;
+    background-color: var(--dark-gray);
+    color: var(--white-2);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+p,
+a,
+li {
+    font-family: $font-body;
+}
+
+a {
+    color: var(--primary-green);
+    transition: color $transition-fast;
+
+    &:hover {
+        color: var(--primary-green-light);
+    }
+}
+
+li {
+    color: var(--primary-green);
+}

@@ -1,0 +1,30 @@
+// ============================================
+// Footer
+// ============================================
+
+.footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(to right, var(--primary-green), var(--primary-teal)) 1;
+    background-color: var(--primary-black);
+    width: 100%;
+    margin-top: auto;
+    flex-shrink: 0;
+
+    p {
+        margin: 0;
+        color: var(--accessible-components--dark-grey);
+        font-size: 0.9rem;
+    }
+
+    a {
+        color: var(--primary-green);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--primary-green-light);
+        }
+    }
+}

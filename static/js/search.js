@@ -2,10 +2,22 @@ document.addEventListener("DOMContentLoaded", function () {
     var input = document.getElementById("search-input");
     if (!input) return;
 
-    input.addEventListener("input", function () {
-        var term = this.value.toLowerCase();
-        var cards = document.querySelectorAll("#card-grid .card");
+    var meta = document.getElementById("search-meta");
+    var noResults = document.getElementById("no-results");
+    var cards = document.querySelectorAll("#card-grid .card");
+    var total = cards.length;
+    var debounceTimer = null;
+
+    function performSearch() {
+        var term = input.value.toLowerCase().trim();
+        var visible = 0;
+
         cards.forEach(function (card) {
+            if (!term) {
+                card.style.display = "";
+                visible++;
+                return;
+            }
             var searchable = [
                 card.getAttribute("data-name") || "",
                 card.getAttribute("data-description") || "",
@@ -14,7 +26,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 card.getAttribute("data-tags") || "",
                 card.getAttribute("data-permissions") || "",
             ].join(" ");
-            card.style.display = searchable.indexOf(term) !== -1 ? "" : "none";
+            var match = searchable.indexOf(term) !== -1;
+            card.style.display = match ? "" : "none";
+            if (match) visible++;
         });
+
+        if (meta) {
+            meta.textContent = term ? "Showing " + visible + " of " + total + " apps" : "";
+        }
+        if (noResults) {
+            if (visible === 0 && term) {
+                noResults.classList.add("visible");
+            } else {
+                noResults.classList.remove("visible");
+            }
+        }
+    }
+
+    input.addEventListener("input", function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(performSearch, 150);
     });
 });
