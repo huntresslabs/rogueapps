@@ -1,0 +1,116 @@
+name: "New RogueApp Submission"
+description: "Submit a new RogueApp to the repository. Please include as much detail as possible."
+title: "[New RogueApp]: (RogueApp Name)"
+labels: ["rogueapp", "submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ⚠️ **Please include as much detail as possible.**  
+        > Do **not** submit any private, sensitive, or proprietary information.
+
+  - type: input
+    id: contributor_name
+    attributes:
+      label: Contributor Name
+      description: "Your name, research group name, or handle"
+      placeholder: "e.g., Jane Doe / CyberSecTeam"
+    validations:
+      required: true
+
+  - type: input
+    id: rogueapp_name
+    attributes:
+      label: RogueApp Name
+      description: "The name of the RogueApp"
+      placeholder: "e.g., EvilApp"
+    validations:
+      required: true
+
+  - type: input
+    id: rogueapp_id
+    attributes:
+      label: RogueApp ID
+      description: "The application ID"
+      placeholder: "e.g., 12345678-90ab-cdef-1234-567890abcdef"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rogueapp_description
+    attributes:
+      label: RogueApp Description
+      description: "Describe the RogueApp and summarize how it is used maliciously."
+      placeholder: "Provide detailed description and context..."
+    validations:
+      required: true
+
+  - type: input
+    id: owner_org_id
+    attributes:
+      label: App Owner Organization ID
+      description: "The ID of the organization that owns the RogueApp"
+      placeholder: "e.g., 87654321-abcd-ef12-3456-abcdef789012"
+
+  - type: input
+    id: publisher_name
+    attributes:
+      label: App Publisher Name
+      description: "The name of the publisher of the RogueApp"
+      placeholder: "e.g., Contoso Ltd."
+
+  - type: input
+    id: publisher_id
+    attributes:
+      label: App Publisher ID
+      description: "The ID of the publisher of the RogueApp"
+      placeholder: "e.g., 98765432-abcd-efgh-ijkl-1234567890mn"
+
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Permissions
+      description: "List the permissions the application uses, including resource, scope, and type (e.g., Microsoft Graph - openid - Delegated)"
+      placeholder: |
+        Microsoft Graph - openid - Delegated
+        Microsoft Graph - Mail.Read - Application
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: "Applicable tags (comma separated)"
+      placeholder: "e.g., BEC, persistence, spam"
+
+  - type: input
+    id: mitre_attack_ids
+    attributes:
+      label: MITRE ATT&CK IDs
+      description: "Applicable MITRE ATT&CK technique IDs (comma separated)"
+      placeholder: "e.g., T1078, T1566.002"
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        References for observed TTPs related to the RogueApp.  
+        Writeups or documentation describing adversary tactics are required.
+      placeholder: |
+        - https://attack.mitre.org/techniques/T1078/
+        - https://example.com/research-on-rogueapp
+
+  - type: input
+    id: date_added
+    attributes:
+      label: Date Added
+      description: "Date the RogueApp was added to the repository (YYYY-MM-DD)"
+      placeholder: "e.g., 2025-10-28"
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Reference
+        The RogueApp specification is defined in [types.ts](../lib/types.ts).  
+        Please submit as much information as possible for each field — partial submissions are welcome.
