@@ -1,0 +1,124 @@
+// ============================================
+// Responsive Breakpoints
+// ============================================
+
+// --- Tablet (≤ 768px) ---
+@media (max-width: $breakpoint-tablet) {
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgba($primary-black, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1rem 2rem;
+        gap: 0;
+        border-bottom: 1px solid var(--border-gray);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform $transition-normal, opacity $transition-normal;
+
+        &.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            animation: slideDown 0.25s ease;
+        }
+
+        .nav-link {
+            padding: 0.75rem 0;
+            font-size: 1.05rem;
+            border-bottom: 1px solid var(--border-gray);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+// --- Mobile (≤ 600px) ---
+@media (max-width: $breakpoint-mobile) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 1.5rem 0 1rem;
+
+        &::before {
+            width: 300px;
+            height: 200px;
+        }
+    }
+
+    .expanded-card-overlay {
+        padding: 1rem;
+    }
+
+    .expanded-card {
+        max-height: 90vh;
+    }
+
+    .contributor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search {
+        font-size: 0.95rem;
+    }
+}
+
+// --- Widescreen (≥ 1400px) ---
+@media (min-width: $breakpoint-wide) {
+    .main {
+        max-width: 1400px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+}
+
+// --- Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

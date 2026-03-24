@@ -1,5 +1,40 @@
-<nav class="nav">
-    <a href="{{ get_url(path='/') }}" class="nav-link">Home</a>
-    <a href="{{ get_url(path='contribute') }}" class="nav-link">Contribute</a>
-    <a href="{{ get_url(path='about') }}" class="nav-link">About</a>
+<nav class="nav" aria-label="Main navigation">
+    <a href="{{ get_url(path='/') }}" class="nav-brand" aria-label="RogueApps Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M9.5 13l2 2 4-5" stroke-width="2.2" />
+        </svg>
+        RogueApps
+    </a>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+        <a href="{{ get_url(path='/') }}" class="nav-link">Home</a>
+        <a href="{{ get_url(path='contribute') }}" class="nav-link">Contribute</a>
+        <a href="{{ get_url(path='about') }}" class="nav-link">About</a>
+    </div>
 </nav>
+<script>
+    (function () {
+        var btn = document.getElementById('hamburger-btn');
+        var links = document.getElementById('nav-links');
+        if (!btn || !links) return;
+        btn.addEventListener('click', function () {
+            var open = links.classList.toggle('open');
+            btn.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open);
+        });
+        // Close menu when a link is clicked (mobile)
+        links.querySelectorAll('.nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                links.classList.remove('open');
+                btn.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+</script>

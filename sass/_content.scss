@@ -1,0 +1,83 @@
+// ============================================
+// Content Pages (About, Contribute)
+// ============================================
+
+.main {
+    h1 {
+        color: var(--primary-green);
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        color: var(--white-2);
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    h3 {
+        color: var(--gray-100);
+        font-size: 1.2rem;
+    }
+
+    blockquote {
+        border-left: 3px solid var(--primary-green);
+        margin: 1.5rem 0;
+        padding: 0.75rem 1.25rem;
+        background: rgba($primary-green, 0.04);
+        border-radius: 0 8px 8px 0;
+        color: var(--gray-100);
+    }
+
+    p {
+        color: var(--gray-100);
+
+        a {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    }
+}
+
+// --- Contribute Page ---
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-gray);
+    margin: 2rem 0;
+}
+
+.thank-you {
+    color: var(--primary-green);
+    text-align: center;
+}
+
+.contributor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.contributor-item {
+    background-color: var(--primary-black);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition:
+        border-color $transition-normal,
+        box-shadow $transition-normal,
+        transform $transition-normal;
+
+    &:hover {
+        border-color: var(--primary-green);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
+    }
+}
+
+.yellow-text {
+    color: var(--primary-yellow);
+    font-weight: 700;
+}

@@ -1,0 +1,126 @@
+// ============================================
+// Navbar
+// ============================================
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
+    background-color: rgba($primary-black, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-gray);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 100%;
+}
+
+// --- Brand ---
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-green);
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+
+    &:hover {
+        color: var(--primary-green-light);
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+}
+
+// --- Links ---
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--gray-100);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color $transition-fast;
+    position: relative;
+    padding: 0.25rem 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-green);
+        transition: width $transition-normal;
+    }
+
+    &:hover {
+        color: var(--white-2);
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        color: var(--primary-green);
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+// --- Hamburger ---
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 110;
+
+    span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--white-2);
+        border-radius: 2px;
+        transition: transform $transition-normal, opacity $transition-fast;
+    }
+
+    &.open span {
+        &:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+}

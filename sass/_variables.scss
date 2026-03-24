@@ -1,0 +1,57 @@
+// ============================================
+// Huntress Color Palette & Design Tokens
+// ============================================
+
+// --- Sass variables (used in SCSS logic) ---
+$primary-black: #222324;
+$primary-green: #00f49c;
+$primary-green-light: #00f5a6;
+$primary-grey: #f5f8fa;
+$primary-blue: #056af9;
+$primary-yellow: #f2ab26;
+$primary-teal: #01c5d1;
+$dark-gray: #272829;
+$gray-100: #cecece;
+$dark-grey: #9b9b9b;
+$border-gray: #7070704d;
+$red-code: #d40f5d;
+
+$font-body: 'Roboto', sans-serif;
+$font-heading: 'Roboto Condensed', sans-serif;
+
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+$breakpoint-wide: 1400px;
+
+// --- CSS Custom Properties (runtime theming) ---
+:root {
+    --primary-black: #{$primary-black};
+    --primary-green: #{$primary-green};
+    --primary-green-light: #{$primary-green-light};
+    --white: #{$primary-grey};
+    --primary-grey: #{$primary-grey};
+    --primary-blue: #{$primary-blue};
+    --primary-yellow: #{$primary-yellow};
+    --primary-sea-green: #{$primary-green-light};
+    --off-white: #f4f4f4;
+    --transparent: transparent;
+    --border-gray: #{$border-gray};
+    --gray-100: #{$gray-100};
+    --primary-teal: #{$primary-teal};
+    --accessible-components--dark-grey: #{$dark-grey};
+    --dark-gray: #{$dark-gray};
+    --red-code: #{$red-code};
+    --white-2: white;
+    --black: black;
+
+    // Derived
+    --green-glow: rgba(0, 244, 156, 0.2);
+    --green-glow-soft: rgba(0, 244, 156, 0.08);
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --card-shadow-hover: 0 8px 24px rgba(0, 244, 156, 0.12);
+    --transition-fast: #{$transition-fast};
+    --transition-normal: #{$transition-normal};
+}

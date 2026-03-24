@@ -1,0 +1,43 @@
+// ============================================
+// Callout
+// ============================================
+
+.callout {
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-green);
+    border-left: 4px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: var(--card-shadow);
+
+    &-title {
+        color: var(--primary-green);
+        margin-top: 0;
+    }
+
+    &-text {
+        color: var(--gray-100);
+    }
+
+    &-button {
+        display: inline-block;
+        background-color: var(--primary-green);
+        color: var(--primary-black);
+        padding: 0.65rem 1.75rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: background-color $transition-fast, transform $transition-fast;
+
+        &:hover {
+            background-color: var(--primary-green-light);
+            transform: translateY(-1px);
+            color: var(--primary-black);
+        }
+    }
+}
