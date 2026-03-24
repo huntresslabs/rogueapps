@@ -1,23 +1,17 @@
-# Use the official Node.js 18 image as the base image
-FROM node:18
+# Build stage
+FROM ghcr.io/getzola/zola:v0.19.2 AS builder
 
-# Set the working directory inside the container
 WORKDIR /app
-
-# Copy package.json files first for caching layer purposes
-COPY package.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application files to the working directory
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
+RUN zola build
 
-# Expose the port that the Next.js app will run on
-EXPOSE 3000
+# Serve stage
+FROM nginx:alpine
+
+COPY --from=builder /app/public /usr/share/nginx/html
+
+EXPOSE 80
 
 # Set the environment variable in the .env.local file
 RUN echo "NEXT_PUBLIC_ENVIRONMENT=development" > .env.local

@@ -33,21 +33,14 @@
         "type": "Delegated"
       }
     ],
-    "tags": [
-      "BEC",
-      "email",
-      "spam"
-    ],
+    "tags": ["BEC", "email", "spam"],
     "references": [
       "https://www.emclient.com/",
       "https://www.huntress.com/blog/legitimate-apps-as-traitorware-for-persistent-microsoft-365-compromise",
       "https://cybercorner.tech/malicious-usage-of-em-client-in-business-email-compromise/"
     ],
     "mitreTTP": [],
-    "contributors": [
-      "Huntress Research Team",
-      "sfaxluke"
-    ],
+    "contributors": ["Huntress Research Team", "sfaxluke"],
     "dateAdded": "2024-08-05"
   },
   {
@@ -84,11 +77,7 @@
         "type": "Delegated"
       }
     ],
-    "tags": [
-      "exfiltration",
-      "BEC",
-      "backup"
-    ],
+    "tags": ["exfiltration", "BEC", "backup"],
     "references": [
       "https://cybercorner.tech/malicious-azure-application-perfectdata-software-and-office365-business-email-compromise/",
       "https://darktrace.com/blog/how-abuse-of-perfectdata-software-may-create-a-perfect-storm-an-emerging-trend-in-account-takeovers",
@@ -96,10 +85,7 @@
       "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
     "mitreTTP": [],
-    "contributors": [
-      "Huntress Research Team",
-      "randomaccess3"
-    ],
+    "contributors": ["Huntress Research Team", "randomaccess3"],
     "dateAdded": "2024-08-14"
   },
   {
@@ -146,11 +132,7 @@
         "type": "Application"
       }
     ],
-    "tags": [
-      "BEC",
-      "spam",
-      "phishing"
-    ],
+    "tags": ["BEC", "spam", "phishing"],
     "references": [
       "https://int.supermailer.de/",
       "https://www.darkreading.com/endpoint-security/supermailer-abuse-email-security-super-sized-credential-theft",
@@ -158,15 +140,8 @@
       "https://darktrace.com/blog/business-email-compromise-to-mass-phishing-campaign-attack-analysis",
       "https://www.linkedin.com/posts/damien-miller-mcandrews_businessemailcompromise-activity-7231350791607881732-UAWJ?utm_source=share&utm_medium=member_desktop"
     ],
-    "mitreTTP": [
-      "T1583.006",
-      "T1566",
-      "T1588.002",
-      "T1657"
-    ],
-    "contributors": [
-      "Syne0"
-    ],
+    "mitreTTP": ["T1583.006", "T1566", "T1588.002", "T1657"],
+    "contributors": ["Syne0"],
     "dateAdded": "2024-08-23"
   },
   {
@@ -213,25 +188,15 @@
         "type": "Delegated"
       }
     ],
-    "tags": [
-      "exfiltration",
-      "BEC"
-    ],
+    "tags": ["exfiltration", "BEC"],
     "references": [
       "https://attack.mitre.org/software/S1040/",
       "https://rclone.org/onedrive/",
       "https://www.kroll.com/en/insights/publications/cyber/new-m365-business-email-compromise-attacks-with-rclone",
       "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
-    "mitreTTP": [
-      "T1567",
-      "T1083",
-      "T1048"
-    ],
-    "contributors": [
-      "Syne0",
-      "randomaccess3"
-    ],
+    "mitreTTP": ["T1567", "T1083", "T1048"],
+    "contributors": ["Syne0", "randomaccess3"],
     "dateAdded": "2024-09-05"
   },
   {
@@ -263,23 +228,14 @@
         "type": "Delegated"
       }
     ],
-    "tags": [
-      "exfiltration",
-      "BEC",
-      "AddressBook"
-    ],
+    "tags": ["exfiltration", "BEC", "AddressBook"],
     "references": [
       "https://www.exportmycontacts.com",
       "https://cybercorner.tech/common-oauth-apps-used-in-business-email-compromise/#cloudsponge",
       "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
-    "mitreTTP": [
-      "T1567"
-    ],
-    "contributors": [
-      "Syne0",
-      "randomaccess3"
-    ],
+    "mitreTTP": ["T1567"],
+    "contributors": ["Syne0", "randomaccess3"],
     "dateAdded": "2024-09-29"
   },
   {
@@ -321,26 +277,14 @@
         "type": "Delegated"
       }
     ],
-    "tags": [
-      "collecion",
-      "exfiltration",
-      "phishing",
-      "BEC"
-    ],
+    "tags": ["collecion", "exfiltration", "phishing", "BEC"],
     "references": [
-      "https://cybercorner.tech/common-oauth-apps-used-in-business-email-compromise/#SigParser", 
+      "https://cybercorner.tech/common-oauth-apps-used-in-business-email-compromise/#SigParser",
       "https://support.sigparser.com/en/articles/8844405-i-think-someone-hacked-my-mailbox-can-you-delete-my-account",
       "https://github.com/randomaccess3/detections/blob/main/M365_Oauth_Apps/MaliciousOauthAppDetections.json"
     ],
-    "mitreTTP": [
-      "T1530",
-      "T1567",
-      "T1087.003"
-    ],
-    "contributors": [
-      "Syne0",
-      "randomaccess3"
-    ],
+    "mitreTTP": ["T1530", "T1567", "T1087.003"],
+    "contributors": ["Syne0", "randomaccess3"],
     "dateAdded": "2025-3-24"
   }
 ]

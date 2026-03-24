@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+    <meta name="keywords" content="OAuth, security, rogue apps, Huntress">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="{{ config.extra.theme_color }}">
+    <link rel="icon" href="{{ config.extra.favicon }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}">
+    <meta property="og:image" content="{{ config.extra.og_image }}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
+    <meta name="twitter:image" content="{{ config.extra.og_image }}">
+    <meta name="twitter:site" content="{{ config.extra.twitter_site }}">
+    <meta name="twitter:creator" content="{{ config.extra.twitter_creator }}">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/globals.css">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    {% include "partials/navbar.html" %}
+    {% block content %}{% endblock %}
+    {% include "partials/footer.html" %}
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

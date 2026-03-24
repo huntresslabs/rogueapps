@@ -1,0 +1,358 @@
+/* === CSS Custom Properties === */
+:root {
+    --primary-black: #222324;
+    --primary-green: #00f49c;
+    --white: var(--primary-grey);
+    --primary-grey: #f5f8fa;
+    --primary-blue: #056af9;
+    --primary-yellow: #f2ab26;
+    --primary-sea-green: var(--primary-green-light);
+    --off-white: #f4f4f4;
+    --transparent: transparent;
+    --border-gray: #7070704d;
+    --gray-100: #cecece;
+    --primary-green-light: #00f5a6;
+    --form-field-border: 1px;
+    --primary-teal: #01c5d1;
+    --accessible-components--dark-grey: #9b9b9b;
+    --dark-gray: #272829;
+    --red-code: #d40f5d;
+    --white-2: white;
+    --black: black;
+}
+
+/* === Base Styles === */
+body {
+    margin: 0;
+    font-family: 'HK Nova', sans-serif;
+    background-color: var(--dark-gray);
+    color: var(--white-2);
+    padding-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Visuelt', sans-serif;
+}
+
+p,
+a,
+li {
+    font-family: 'HK Nova', sans-serif;
+}
+
+a,
+li {
+    color: #00f49c;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* === Layout === */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--primary-green);
+}
+
+.powered-by {
+    text-align: center;
+    color: var(--gray-100);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.powered-by a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.powered-by a:hover {
+    text-decoration: underline;
+}
+
+/* === Search === */
+.search {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-gray);
+    border-radius: 8px;
+    background-color: var(--primary-black);
+    color: var(--white-2);
+    margin-bottom: 1.5rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search::placeholder {
+    color: var(--accessible-components--dark-grey);
+}
+
+.search:focus {
+    border-color: var(--primary-green);
+}
+
+/* === Card Grid === */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.grid.hidden {
+    display: none;
+}
+
+.card {
+    background-color: var(--primary-black);
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-green);
+}
+
+.card p {
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.card-details {
+    margin-top: 1rem;
+}
+
+.card-details p {
+    margin: 0.4rem 0;
+}
+
+.card-details strong {
+    color: var(--white-2);
+}
+
+.card-details code {
+    color: var(--red-code);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* === Teal List === */
+.teal-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.teal-list li {
+    color: var(--primary-teal);
+    margin-bottom: 0.3rem;
+}
+
+.teal-list a {
+    color: var(--primary-teal);
+    word-break: break-all;
+}
+
+/* === Expanded Card Overlay === */
+.expanded-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.expanded-card {
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+/* === Callout === */
+.callout {
+    background-color: var(--primary-black);
+    border: 2px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.callout-title {
+    color: var(--primary-green);
+    margin-top: 0;
+}
+
+.callout-text {
+    color: var(--gray-100);
+}
+
+.callout-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--primary-black);
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s;
+}
+
+.callout-button:hover {
+    opacity: 0.85;
+}
+
+/* === Navbar === */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-black);
+    border-bottom: 1px solid var(--border-gray);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    color: var(--white-2);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-green);
+}
+
+/* === Footer === */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-gray);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-black);
+    z-index: 100;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--accessible-components--dark-grey);
+}
+
+.footer a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* === Contribute Page === */
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-gray);
+    margin: 2rem 0;
+}
+
+.thank-you {
+    color: var(--primary-green);
+    text-align: center;
+}
+
+.contributor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.contributor-item {
+    background-color: var(--primary-black);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.yellow-text {
+    color: var(--primary-yellow);
+    font-weight: 700;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}

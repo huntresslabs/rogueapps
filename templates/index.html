@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <main class="main">
+        <h1 class="title">RogueApps</h1>
+        <h3 class="powered-by">
+            When Good Apps Go Rogue | Powered by <a href="https://www.huntress.com" target="_blank"
+                rel="noopener noreferrer">Huntress</a>
+        </h3>
+        <input type="text" id="search-input" placeholder="Search..." class="search">
+
+        {% set data = load_data(path="static/rogueapps.json") %}
+        <div class="grid" id="card-grid">
+            {% for app in data %}
+            <div class="card" data-index="{{ loop.index0 }}" data-name="{{ app.appDisplayName | lower }}"
+                data-description="{{ app.description | lower }}"
+                data-contributors="{% if app.contributors %}{{ app.contributors | join(sep=', ') | lower }}{% endif %}"
+                data-mitre="{% if app.mitreTTP %}{{ app.mitreTTP | join(sep=', ') | lower }}{% endif %}"
+                data-tags="{% if app.tags %}{{ app.tags | join(sep=' ') | lower }}{% endif %}"
+                data-permissions="{% for p in app.permissions %}{{ p.resource | lower }} {{ p.permission | lower }} {{ p.type | lower }} {% endfor %}"
+                onclick="toggleExpandCard({{ loop.index0 }})">
+                <h3>{{ app.appDisplayName }}</h3>
+                <p>{{ app.description }}</p>
+                <div class="card-details" style="display:none;">
+                    <p><strong>App ID: </strong> {{ app.appId }}</p>
+                    <p><strong>Owner Organization ID: </strong> {{ app.appOwnerOrganizationId }}</p>
+                    <p><strong>Publisher: </strong> {{ app.appPublisherName }}</p>
+                    <p>
+                        <strong>Contributors: </strong>
+                        {% if app.contributors and app.contributors | length > 0 %}
+                        {{ app.contributors | join(sep=", ") }}
+                        {% else %}
+                        N/A
+                        {% endif %}
+                    </p>
+                    <p><strong>MITRE TTP: </strong>
+                        {% if app.mitreTTP and app.mitreTTP | length > 0 %}
+                        {{ app.mitreTTP | join(sep=", ") }}
+                        {% else %}
+                        N/A
+                        {% endif %}
+                    </p>
+                    <p><strong>Tags: </strong>
+                        {% if app.tags and app.tags | length > 0 %}
+                        {{ app.tags | join(sep=", ") }}
+                        {% else %}
+                        N/A
+                        {% endif %}
+                    </p>
+                    <h4>Permissions:</h4>
+                    <ul class="teal-list">
+                        {% for permission in app.permissions %}
+                        <li>
+                            <code>{{ permission.resource }}:</code> <code>{{ permission.permission }}</code>
+                            (<code>{{ permission.type }}</code>)
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <h4>References:</h4>
+                    <ul class="teal-list">
+                        {% for ref in app.references %}
+                        <li>
+                            <a href="{{ ref }}" target="_blank" rel="noopener noreferrer">{{ ref }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="expanded-card-overlay" id="expanded-overlay" style="display:none;">
+            <div class="expanded-card card" id="expanded-card"></div>
+        </div>
+    </main>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/search.js"></script>
+<script src="/js/expand.js"></script>
+{% endblock %}

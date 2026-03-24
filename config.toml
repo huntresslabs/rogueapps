@@ -1,0 +1,14 @@
+base_url = "https://huntresslabs.github.io/rogueapps"
+title = "RogueApps"
+description = "RogueApps: when good OAuth apps go rogue."
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+
+[extra]
+theme_color = "#00f49c"
+og_image = "https://cdn.prod.website-files.com/655ddcc107aef728354e9c2a/655ddcc107aef728354e9cbf_Huntress-logo.svg"
+twitter_site = "@HuntressLabs"
+twitter_creator = "@HuntressLabs"
+favicon = "https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/favicon.ico"
