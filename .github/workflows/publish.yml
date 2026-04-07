@@ -24,10 +24,18 @@ jobs:
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
 
-      - name: Build with Zola 🏗️
-        uses: shalzz/zola-deploy-action@v0.22.1
-        env:
-          BUILD_ONLY: true
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Zola 🏗️
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.22.1
+
+      - name: Build 🏗️
+        run: make build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
